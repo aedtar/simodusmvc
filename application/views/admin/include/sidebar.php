@@ -44,22 +44,6 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
       </ul>
 
       <ul class="sidebar-menu">
-          
-        <li id="users" class="treeview">
-            <a href="#">
-              <i class="fa fa-dashboard"></i> <span>Meter Dummy</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-            <ul class="treeview-menu">
-              <li id="pakai_dummy"><a href="<?= base_url('dummy/pakai/add'); ?>"><i class="fa fa-circle-o"></i> Pemakaian Dummy</a></li>
-<!--          <li id="add_user1"><a href="<?= base_url('admin/users/add'); ?>"><i class="fa fa-circle-o"></i> Aktivasi Meter Pengganti</a></li>
-              <li id="add_user2"><a href="<?= base_url('admin/users/add'); ?>"><i class="fa fa-circle-o"></i> Dummy Kembali</a></li>-->
-              <li id="view_users" class=""><a href="<?= base_url('dummy/pakai'); ?>"><i class="fa fa-circle-o"></i> Data Pemakaian Dummy</a></li>
-            </ul>
-          </li>
-        
         <li id="users" class="treeview">
             <a href="#">
               <i class="fa fa-dashboard"></i> <span>Users</span>
