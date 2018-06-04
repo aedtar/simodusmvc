@@ -20,7 +20,7 @@
             
             <div class="col-md-4 col-md-offset-4 text-center">
                 <div class="login-title">
-                    <h3><span>AdminLTE</span>USER MANAGEMENT SYSTEM</h3>
+                    <h3><span>SIMODUS</span>USER MANAGEMENT SYSTEM</h3>
                 </div>
                 <?php if(isset($msg) || validation_errors() !== ''): ?>
                 <div class="alert alert-warning alert-dismissible">

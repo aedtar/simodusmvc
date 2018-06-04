@@ -42,7 +42,39 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
           </ul>
         </li>
       </ul>
+      
+      <ul class="sidebar-menu">
+        <li id="dashboard" class="treeview">
+          <a href="#"><i class="fa fa-dashboard"></i> <span>Monitoring Dummy</span>           
+          </a>
+        </li>
+      </ul>
+      
+      
+      
+      <ul class="sidebar-menu">
+        <li id="dashboard" class="treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Dummy</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li id="dashboard1"><a href="<?= base_url('admin/dashboard'); ?>"><i class="fa fa-circle-o"></i> Pemakaian Dummy</a></li>
+            <li id="dashboard1"><a href="<?= base_url('admin/dashboard'); ?>"><i class="fa fa-circle-o"></i> Aktivasi Dummy</a></li>
+            <li id="dashboard2"><a href="<?= base_url('admin/dashboard2/'); ?>"><i class="fa fa-circle-o"></i> Dummy Kembali</a></li>
+          </ul>
+        </li>
+      </ul>
 
+      <ul class="sidebar-menu">
+        <li id="dashboard" class="treeview">
+          <a href="#"><i class="fa fa-dashboard"></i> <span>Laporan</span>           
+          </a>
+        </li>
+      </ul>
+      
       <ul class="sidebar-menu">
         <li id="users" class="treeview">
             <a href="#">
