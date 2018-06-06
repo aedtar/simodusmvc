@@ -37,6 +37,7 @@
 						$admin_data = array(
 							'admin_id' => $result['id'],
 						 	'name' => $result['username'],
+                                                        'unit' => $result['unit'],
 						 	'is_admin_login' => TRUE
 						);
 						$this->session->set_userdata($admin_data);

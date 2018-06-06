@@ -32,7 +32,7 @@
                 <?php endif; ?>
                 <div class="form-box">
                     <div class="caption">
-                        <h4>Sign in to start your session</h4>
+                        <h4>Silahkan LOGIN</h4>
                     </div>
                     <?php echo form_open(base_url('admin/auth/login'), 'class="login-form" '); ?>
                         <div class="input-group">

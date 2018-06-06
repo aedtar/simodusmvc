@@ -78,7 +78,7 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
       <ul class="sidebar-menu">
         <li id="users" class="treeview">
             <a href="#">
-              <i class="fa fa-dashboard"></i> <span>Users</span>
+              <i class="fa fa-dashboard"></i> <span>Manajemen Users</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>

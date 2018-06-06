@@ -42,6 +42,13 @@
                 </div>
               </div>
               <div class="form-group">
+                <label for="unit" class="col-sm-2 control-label">Unit</label>
+
+                <div class="col-sm-9">
+                  <input type="number" name="unit" class="form-control" id="unit" placeholder="">
+                </div>
+              </div>
+              <div class="form-group">
                 <label for="mobile_no" class="col-sm-2 control-label">Mobile No</label>
 
                 <div class="col-sm-9">

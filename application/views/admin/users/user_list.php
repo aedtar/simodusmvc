@@ -4,7 +4,7 @@
  <section class="content">
    <div class="box">
     <div class="box-header">
-      <h3 class="box-title">Data Table With Full Features</h3>
+      <h3 class="box-title">Manajemen User</h3>
     </div>
     <!-- /.box-header -->
     <div class="box-body table-responsive">
@@ -14,7 +14,7 @@
           <th>First Name</th>
           <th>Last Name</th>
           <th>Email</th>
-          <th>Mobile No.</th>
+          <th>Unit</th>
           <th>Role</th>
           <th style="width: 150px;" class="text-right">Option</th>
         </tr>
@@ -25,8 +25,20 @@
             <td><?= $row['firstname']; ?></td>
             <td><?= $row['lastname']; ?></td>
             <td><?= $row['email']; ?></td>
-            <td><?= $row['mobile_no']; ?></td>
-            <td><span class="btn btn-primary btn-flat btn-xs"><?= ($row['is_admin'] == 1)? 'admin': 'member'; ?><span></td>
+            <td><?= $row['is_admin']; ?></td>
+            <td>
+                <span class="btn btn-primary btn-flat btn-xs">
+                    <?= 
+                        ($row['is_admin'] == '0')? 'Super Admin':
+                        ($row['is_admin'] == "1")? 'Admin Wilayah':
+                        ($row['is_admin'] == "2")? 'Admin Area':
+                        ($row['is_admin'] == "3")? 'Admin Rayon':
+                        ($row['is_admin'] == "4")? 'Aktivasier':
+                        ($row['is_admin'] == "5")? 'Posko':
+                    'nothing'; 
+                    ?>
+                <span>
+            </td>
             <td class="text-right"><a href="<?= base_url('admin/users/edit/'.$row['id']); ?>" class="btn btn-info btn-flat">Edit</a><a href="<?= base_url('admin/users/del/'.$row['id']); ?>" class="btn btn-danger btn-flat <?= ($row['is_admin'] == 1)? 'disabled': ''?>">Delete</a></td>
           </tr>
           <?php endforeach; ?>
