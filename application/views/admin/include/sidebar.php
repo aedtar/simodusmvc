@@ -144,7 +144,7 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
             <li id="modals"><a href="<?= base_url('adminlte/modals'); ?>"><i class="fa fa-circle-o"></i> Modals</a></li>
           </ul>
         </li>
-         <li id="forms" class="treeview">
+<!--         <li id="forms" class="treeview">
           <a href="#">
             <i class="fa fa-edit"></i> <span>Forms</span>
             <span class="pull-right-container">
@@ -156,8 +156,8 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
             <li id="advanced"><a href="<?= base_url('adminlte/advanced_form'); ?>"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
             <li id="editors"><a href="<?= base_url('adminlte/editors_form'); ?>"><i class="fa fa-circle-o"></i> Editors</a></li>
           </ul>
-        </li>
-        <li id="tables" class="treeview">
+        </li>-->
+<!--        <li id="tables" class="treeview">
           <a href="#">
             <i class="fa fa-table"></i> <span>Tables</span>
             <span class="pull-right-container">
@@ -177,8 +177,8 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
               <small class="label pull-right bg-blue">17</small>
             </span>
           </a>
-        </li>
-        <li id="mailbox" class="treeview">
+        </li>-->
+<!--        <li id="mailbox" class="treeview">
           <a href="">
             <i class="fa fa-envelope"></i> <span>Mailbox</span>
             <span class="pull-right-container">
@@ -196,9 +196,9 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
             <li id="compose"><a href="<?= base_url('adminlte/compose'); ?>">Compose</a></li>
             <li id="read"><a href="<?= base_url('adminlte/read_mail'); ?>">Read</a></li>
           </ul>
-        </li>
+        </li>-->
 
-        <li id="examples" class="treeview">
+<!--        <li id="examples" class="treeview">
           <a href="#">
             <i class="fa fa-folder"></i> <span>Examples</span>
             <span class="pull-right-container">
@@ -216,8 +216,8 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
             <li id="blank-page"><a href="<?= base_url('adminlte/blank'); ?>"><i class="fa fa-circle-o"></i> Blank Page</a></li>
             <li id="pace"><a href="<?= base_url('adminlte/pace'); ?>"><i class="fa fa-circle-o"></i> Pace Page</a></li>
           </ul>
-        </li>
-              <li class="treeview">
+        </li>-->
+<!--              <li class="treeview">
           <a href="#">
             <i class="fa fa-share"></i> <span>Multilevel</span>
             <span class="pull-right-container">
@@ -249,7 +249,7 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
             </li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
           </ul>
-        </li>
+        </li>-->
 
 
         <li><a target="_blank" href="../documentation_adminlte/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
