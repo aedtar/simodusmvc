@@ -4,7 +4,7 @@
  <section class="content">
    <div class="box">
     <div class="box-header">
-      <h3 class="box-title">Pengembalk Dummy <?= ucwords($this->session->userdata('unit')); ?></h3>
+      <h3 class="box-title">Pengembalian Dummy <?= ucwords($this->session->userdata('unit')); ?></h3>
     </div>
        <a href="<?= base_url('dummy/kembali/add'); ?>" class="btn btn-info btn-flat
                     <?=(
@@ -38,14 +38,14 @@
                 <a href="<?= base_url('dummy/kembali/edit/'.$row['id_meter']); ?>" class="btn btn-warning btn-flat
                     <?=(
                             $this->session->userdata('is_admin') == 3                        
-                        )?'':'disabled'
+                        )?'disabled':'disabled'
                     ?>
                    ">Edit
                 </a>
                 <a href="<?= base_url('dummy/kembali/del/'.$row['id_meter']); ?>" class="btn btn-danger btn-flat 
                     <?=(
                             $this->session->userdata('is_admin') == 3                        
-                        )?'':'disabled'
+                        )?'disabled':'disabled'
                     ?>
                     ">Delete
                 </a>

@@ -99,6 +99,7 @@
                                                 'ptgs_pasang' => $this->input->post('ptgs_pasang'),
                                                 'sisa_pulsa' => $this->input->post('sisa_pulsa'),
                                                 'no_hp_plg' => $this->input->post('no_hp_plg'),
+                                                'nama_cc' => $this->input->post('nama_cc'),
                                                 'nama' => $this->session->userdata('name'),
                                                 'id_user' => $this->session->userdata('admin_id'),
                                                 'std_dummy' => $this->input->post('std_dummy'),

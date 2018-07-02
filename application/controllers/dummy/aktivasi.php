@@ -34,7 +34,9 @@
 					$this->load->view('admin/layout', $data);
 				}
 				else{
+                                        $tgl_aktivasi = date("Y-m-d H:i:s"); 
 					$data = array(
+                                                'tgl_aktivasi' => $tgl_aktivasi,
                                                 'id_meter' => $id,
                                                 'no_dummy' => $this->input->post('no_dummy'),
                                                 'no_meter_rusak' => $this->input->post('no_meter_rusak'),
@@ -51,8 +53,7 @@
                                             
                                         );
                                         
-                                        $no_dummy = $this->input->post('no_dummy');
-                                        $tgl_aktivasi = date("Y-m-d H:i:s");   
+                                        $no_dummy = $this->input->post('no_dummy');  
 					$data_stok = array(
                                                 'tgl_aktivasi' => $tgl_aktivasi,
                                                 'no_meter_rusak' => $this->input->post('no_meter_baru'),

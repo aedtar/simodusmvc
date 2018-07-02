@@ -10,6 +10,7 @@
 
 		public function index(){
 			$data['all_data'] =  $this->dashboard_model->get_all_data();
+			$data['all_data2'] =  $this->dashboard_model->get_all_data2();
 			$data['view'] = 'admin/dashboard/index';
 			$this->load->view('admin/layout', $data);
 		}

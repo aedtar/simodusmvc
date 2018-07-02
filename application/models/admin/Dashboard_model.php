@@ -28,9 +28,18 @@
 
                 
 		public function get_all_data(){
-//                
-                    
+                $this->db->where('unit', $this->session->userdata('unit'));
+                $query = $this->db->get('tbl_metdum_stok');
+                return $result = $query->num_rows();
 		}
+                
+		public function get_all_data2(){
+                $this->db->where('unit', $this->session->userdata('unit'));
+                $this->db->where('tgl_aktivasi', NULL);
+                $query = $this->db->get('tbl_metdum_stok');
+                return $result = $query->num_rows();
+		}
+                
                 
 		public function change_pwd($data, $id){
 			$this->db->where('id', $id);
