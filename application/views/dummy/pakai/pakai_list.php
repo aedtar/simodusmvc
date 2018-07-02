@@ -8,7 +8,7 @@
     </div>
        <a href="<?= base_url('dummy/pakai/add'); ?>" class="btn btn-info btn-flat
                     <?=(
-                            $this->session->userdata('is_admin') == 3                        
+                            $this->session->userdata('is_admin') == 5                        
                         )?'':'disabled'
                     ?>
                    ">Tambah Data

@@ -109,7 +109,7 @@
             <td class="text-right">
                 <a href="<?= base_url('dummy/aktivasi/entri/'.$row['id_meter']); ?>" class="btn btn-warning btn-flat
                     <?=(
-                            $this->session->userdata('is_admin') == 3                        
+                            $this->session->userdata('is_admin') == 4                        
                         )?'':'disabled'
                     ?>
                    ">Aktivasi
