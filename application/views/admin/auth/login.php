@@ -36,7 +36,7 @@
                     </div>
                     <?php echo form_open(base_url('admin/auth/login'), 'class="login-form" '); ?>
                         <div class="input-group">
-                            <input type="email" name="email" id="email" class="form-control" placeholder="Email" >
+                            <input type="text" name="username" id="email" class="form-control" placeholder="Username" >
                             <input type="password" name="password" id="password" class="form-control" placeholder="Password" >
                             <input type="submit" name="submit" id="submit" class="form-control" value="Submit">
                         </div>

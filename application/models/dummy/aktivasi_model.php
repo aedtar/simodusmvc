@@ -1,8 +1,9 @@
 <?php
-	class Pakai_model extends CI_Model{
+	class Aktivasi_model extends CI_Model{
 
-		public function add_pakai($data,$data_stok,$no_dummy){
-			$this->db->insert('tbl_metdum_pakai', $data);
+		public function entri_model($data,$data_stok,$no_dummy,$id){
+			$this->db->insert('tbl_aktivasi', $data);
+                        $this->update_tbl_metdum_pakai($id);
 			$this->load->model('dummy/stok_model', 'stok_model');
                         $this->stok_model->update_stok($data_stok,$no_dummy);
                         return true;
@@ -11,15 +12,30 @@
 		public function get_all_users(){
 //                    untuk menghitung waktu operasi model ini
                         $this->benchmark->mark('code_start');
-
-                                $this->db->order_by('id_meter','desc');
+                                $this->db->order_by('tgl_pakai','asc');
                                 $this->db->limit(150);
                                 $this->db->like('unit', $this->session->userdata('unit'));
+                                
+                                $tes1='non aktif';
+                                $tes2='belum';
+                                
+                                $this->db->where('aktivasi', $tes1);
+                                $this->db->where('kembali', $tes2);
         //                        $this->db->where('unit', $this->session->userdata('unit'));
-
                                 $query = $this->db->get('tbl_metdum_pakai');
                                 return $result = $query->result_array();
 
+                        $this->benchmark->mark('code_end');
+                    
+		}
+
+		public function get_histori(){
+//                    untuk menghitung waktu operasi model ini
+                        $this->benchmark->mark('code_start');
+                                $this->db->order_by('tgl_aktivasi','asc');
+                                $this->db->where('unit', $this->session->userdata('unit'));
+                                $query = $this->db->get('tbl_aktivasi');
+                                return $result = $query->result_array();
                         $this->benchmark->mark('code_end');
                     
 		}
@@ -41,13 +57,16 @@
 			return $result = $query->row_array();
 		}
                 
-//		public function update_stok($data_stok,$no_dummy){
-//                        $this->db->where('no_dummy', $no_dummy);
-//                        $this->db->where('unit', $this->session->userdata('unit'));
-//			$this->db->update('tbl_metdum_stok', $data_stok);
-//			return true;
-//                        
-//		}
+		public function update_tbl_metdum_pakai($id){
+                        $tes = 'aktif';
+                        $data_stok = array(
+                                'aktivasi' => $tes,
+                        );
+                        $this->db->where('id_meter', $id);
+			$this->db->update('tbl_metdum_pakai', $data_stok);
+			return true;
+                        
+		}
 
 		public function edit_dummy($data, $id){
 			$this->db->where('id_meter', $id);

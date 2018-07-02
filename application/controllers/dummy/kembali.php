@@ -1,77 +1,65 @@
 <?php
 	defined('BASEPATH') OR exit('No direct script access allowed');
 
-	class Pakai extends MY_Controller {
+	class Kembali extends MY_Controller {
 
 		public function __construct(){
 			parent::__construct();
-			$this->load->model('dummy/pakai_model', 'pakai_model');
+			$this->load->model('dummy/kembali_model', 'kembali_model');
 		}
 
 		public function index(){
-			$data['all_users'] =  $this->pakai_model->get_all_users();
-			$data['view'] = 'dummy/pakai/pakai_list';
+			$data['all_users'] =  $this->kembali_model->get_all_users();
+			$data['view'] = 'dummy/kembali/kembali_list';
 			$this->load->view('admin/layout', $data);
+		
 		}
 		
 		public function add(){
 			if($this->input->post('submit')){
 
-                                $this->form_validation->set_rules('no_dummy', 'Nomor Dummy', 'trim|required');
-                                $this->form_validation->set_rules('no_meter_rusak', 'Nomor Meter Rusak', 'trim|required');
-                                $this->form_validation->set_rules('alasan_rusak', 'Alasan Rusak', 'trim|required');
-                                $this->form_validation->set_rules('ptgs_pasang', 'Petugas Pasang', 'trim|required');
-                                $this->form_validation->set_rules('sisa_pulsa', 'Sisa Pulsa', 'trim|required');
-                                $this->form_validation->set_rules('no_hp_plg', 'No HP pelanggan', 'trim|required');
+                                $this->form_validation->set_rules('id_meter', 'Nomor Dummy', 'trim|required');
                                 $this->form_validation->set_rules('nama_cc', 'Nama Call Center', 'trim|required');
-                                $this->form_validation->set_rules('std_dummy', 'Stand Dummy', 'trim|required');
+                                $this->form_validation->set_rules('stand', 'Stand Dummy', 'trim|required');
 
 				if ($this->form_validation->run() == FALSE) {
-					$data['view'] = 'dummy/pakai/pakai_add';
-                                        $data['dummy']= $this->pakai_model->get_dummy();
+					$data['view'] = 'dummy/kembali/kembali_add';
+                                        $data['dummy']= $this->kembali_model->get_dummy_kbl();
 					$this->load->view('admin/layout', $data);
 				}
 				else{
+                                        
+                                        $id = $this->input->post('id_meter');
+                                        $dummy_kembali = $this->kembali_model->get_dummy_by_id_kbl($id);
+                                        $no_dummy=$dummy_kembali['no_dummy'];
 					$data = array(
-                                                'id_meter' => $this->input->post(''),
-                                                'no_dummy' => $this->input->post('no_dummy'),
-                                                'no_meter_rusak' => $this->input->post('no_meter_rusak'),
-                                                'alasan_rusak' => $this->input->post('alasan_rusak'),
-                                                'ptgs_pasang' => $this->input->post('ptgs_pasang'),
-                                                'sisa_pulsa' => $this->input->post('sisa_pulsa'),
-                                                'no_hp_plg' => $this->input->post('no_hp_plg'),
-                                                'nama_cc' => $this->input->post('nama_cc'),
-                                                'no_dummy' => $this->input->post('no_dummy'),
-                                                'std_dummy' => $this->input->post('std_dummy'),
-                                                'aktivasi' => 'non aktif',
-                                                'kembali' => 'belum',
-                                                'nama' => $this->session->userdata('name'),
+                                                'id_meter' => $id,
+                                                'no_dummy' => $no_dummy,
+                                                'stand' => $this->input->post('stand'),
+                                                'nama' => $this->input->post('nama_cc'),
                                                 'unit' => $this->session->userdata('unit'),
                                                 'id_user' => $this->session->userdata('admin_id'),
 					);
-                                                                                    
-                                        $tgl_pakai = date("Y-m-d H:i:s");   
+                                        
+                                        $tes='ready';                                            
+                                        $tgl_kembali = date("Y-m-d H:i:s");   
 					$data_stok = array(
-                                                'tgl_pakai' => $tgl_pakai,
-                                                'tgl_aktivasi' => NULL,
-                                                'tgl_kembali' => NULL,
-                                                'no_meter_rusak' => $this->input->post('no_meter_rusak'),
+                                                'tgl_kembali' => $tgl_kembali,
                                                 'posko' => $this->session->userdata('name'),  
-                                                'status'=> NULL,
+                                                'status'=> $tes,
                                         );
                                         
-                                        $no_dummy = $this->input->post('no_dummy');
 					$data = $this->security->xss_clean($data);
-					$result = $this->pakai_model->add_pakai($data,$data_stok,$no_dummy);
+					$result = $this->kembali_model->add_kembali($data,$data_stok,$no_dummy,$id);
 					if($result ){
 						$this->session->set_flashdata('msg', 'Record is Added Successfully!');
-						redirect(base_url('dummy/pakai'));
+						redirect(base_url('dummy/kembali'));
 					}
 				}
 			}
 			else{
-                                $data['view'] = 'dummy/pakai/pakai_add';
-                                $data['dummy']= $this->pakai_model->get_dummy();
+                                $data['view'] = 'dummy/kembali/kembali_add';
+                                $data['dummy']= $this->kembali_model->get_dummy_kbl();
                                 $this->load->view('admin/layout', $data);
 			}
 			

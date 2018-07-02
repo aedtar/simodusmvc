@@ -1,11 +1,9 @@
 <?php
-	class Pakai_model extends CI_Model{
+	class Update_stok_model extends CI_Model{
 
-		public function add_pakai($data,$data_stok,$no_dummy){
+		public function add_pakai($data){
 			$this->db->insert('tbl_metdum_pakai', $data);
-			$this->load->model('dummy/stok_model', 'stok_model');
-                        $this->stok_model->update_stok($data_stok,$no_dummy);
-                        return true;
+			return true;
 		}
 
 		public function get_all_users(){
@@ -13,11 +11,12 @@
                         $this->benchmark->mark('code_start');
 
                                 $this->db->order_by('id_meter','desc');
-                                $this->db->limit(150);
+                                $this->db->limit(1000);
                                 $this->db->like('unit', $this->session->userdata('unit'));
         //                        $this->db->where('unit', $this->session->userdata('unit'));
 
                                 $query = $this->db->get('tbl_metdum_pakai');
+        //                       $query = $this->db->get_where('tbl_metdum_pakai',array('unit' => $this->session->userdata('unit')));
                                 return $result = $query->result_array();
 
                         $this->benchmark->mark('code_end');
@@ -33,25 +32,17 @@
                         
 			return $result = $query->result_array();
 		}
-                                
                 
                 
-		public function get_dummy_by_id($id){
-			$query = $this->db->get_where('tbl_metdum_pakai', array('id_meter' => $id));
+                
+		public function get_user_by_id($id){
+			$query = $this->db->get_where('ci_users', array('id' => $id));
 			return $result = $query->row_array();
 		}
-                
-//		public function update_stok($data_stok,$no_dummy){
-//                        $this->db->where('no_dummy', $no_dummy);
-//                        $this->db->where('unit', $this->session->userdata('unit'));
-//			$this->db->update('tbl_metdum_stok', $data_stok);
-//			return true;
-//                        
-//		}
 
-		public function edit_dummy($data, $id){
-			$this->db->where('id_meter', $id);
-			$this->db->update('tbl_metdum_pakai', $data);
+		public function update_stok($data, $id){
+			$this->db->where('id', $id);
+			$this->db->update('ci_users', $data);
 			return true;
 		}
 

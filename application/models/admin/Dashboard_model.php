@@ -1,5 +1,5 @@
 <?php
-	class Auth_model extends CI_Model{
+	class Dashboard_model extends CI_Model{
 
 		public function login($data){
 			$query = $this->db->get_where('tbl_user', array('username' => $data['username']));
@@ -20,6 +20,18 @@
 			}
 		}
 
+//		public function get_all_data(){
+//			$this->db->where('id', $id);
+//			$this->db->update('tbl_user', $data);
+//			return true;
+//		}
+
+                
+		public function get_all_data(){
+//                
+                    
+		}
+                
 		public function change_pwd($data, $id){
 			$this->db->where('id', $id);
 			$this->db->update('ci_users', $data);

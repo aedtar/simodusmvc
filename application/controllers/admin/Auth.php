@@ -21,7 +21,7 @@
 		public function login(){
 
 			if($this->input->post('submit')){
-				$this->form_validation->set_rules('email', 'Email', 'trim|required');
+				$this->form_validation->set_rules('username', 'Username', 'trim|required');
 				$this->form_validation->set_rules('password', 'Password', 'trim|required');
 
 				if ($this->form_validation->run() == FALSE) {
@@ -29,22 +29,23 @@
 				}
 				else {
 					$data = array(
-					'email' => $this->input->post('email'),
-					'password' => $this->input->post('password')
+					'username' => $this->input->post('username'),
+					'password' => $this->input->post('password')    
 					);
 					$result = $this->auth_model->login($data);
 					if ($result == TRUE) {
 						$admin_data = array(
-							'admin_id' => $result['id'],
-						 	'name' => $result['username'],
+							'admin_id' => $result['id_user'],
+						 	'name' => $result['nama'],
                                                         'unit' => $result['unit'],
+                                                        'is_admin' => $result['admin'],
 						 	'is_admin_login' => TRUE
 						);
 						$this->session->set_userdata($admin_data);
 						redirect(base_url('admin/dashboard'), 'refresh');
 					}
 					else{
-						$data['msg'] = 'Invalid Email or Password!';
+						$data['msg'] = 'Invalid Username or Password!';
 						$this->load->view('admin/auth/login', $data);
 					}
 				}
