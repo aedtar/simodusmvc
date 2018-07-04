@@ -45,12 +45,12 @@
             <div class="icon">
               <i class="ion ion-bag"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <!--<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>-->
           </div>
         </div>
          <!--./col--> 
-        <div class="col-lg-3 col-xs-6">
-           <!--small box--> 
+<!--        <div class="col-lg-3 col-xs-6">
+           small box 
           <div class="small-box bg-green">
             <div class="inner">
               <h3>53<sup style="font-size: 20px">%</sup></h3>
@@ -63,9 +63,9 @@
             <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
-         <!--./col--> 
+         ./col 
         <div class="col-lg-3 col-xs-6">
-           <!--small box--> 
+           small box 
           <div class="small-box bg-red">
             <div class="inner">
               <h3>65</h3>
@@ -77,34 +77,49 @@
             </div>
             <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
-        <!--</div>-->
-         <!--./col--> 
-      </div>
+        </div>
+         ./col 
+      </div>-->
        <!--/.row--> 
+       
+
+        <!--pulanglah-->        
        
        
 
-        <!--Main row--> 
+<!--        Main row 
       <div class="row">
-         <!--Left col--> 
+         Left col 
         <section class="col-lg-7 connectedSortable">
-           <!--Custom tabs (Charts with tabs)-->
+           Custom tabs (Charts with tabs)
           <div class="nav-tabs-custom">
-             <!--Tabs within a box--> 
-<!--            <ul class="nav nav-tabs pull-right">
+             Tabs within a box 
+            <ul class="nav nav-tabs pull-right">
               <li class="active"><a href="#revenue-chart" data-toggle="tab">Area</a></li>
               <li><a href="#sales-chart" data-toggle="tab">Donut</a></li>
               <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li>
-            </ul>-->
+            </ul>
             <div class="tab-content no-padding">
-               <!--Morris chart - Sales--> 
-              <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"></div>
-              <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
+               Morris chart - Sales 
+               <div 
+                   class="chart tab-pane active" 
+                    id="revenue-chart" 
+                    style="position: relative; height: 300px;"
+                    >
+                   
+               </div>
+              <div 
+                  class="chart tab-pane" 
+                  id="sales-chart" 
+                  style="position: relative; height: 300px;"
+                  >
+              </div>
+               
             </div>
           </div>
-           <!--/.nav-tabs-custom--> 
+           /.nav-tabs-custom 
 
-<!--           Chat box 
+           Chat box 
           <div class="box box-success">
             <div class="box-header">
               <i class="fa fa-comments-o"></i>
@@ -118,8 +133,8 @@
                   <button type="button" class="btn btn-default btn-sm"><i class="fa fa-square text-red"></i></button>
                 </div>
               </div>
-            </div>-->
-<!--            <div class="box-body chat" id="chat-box">
+            </div>
+            <div class="box-body chat" id="chat-box">
                chat item 
               <div class="item">
                 <img src="<?= base_url() ?>public/dist/img/user4-128x128.jpg" alt="user image" class="online">
@@ -177,8 +192,8 @@
                 </p>
               </div>
                /.item 
-            </div>-->
-<!--             /.chat 
+            </div>
+             /.chat 
             <div class="box-footer">
               <div class="input-group">
                 <input class="form-control" placeholder="Type message...">
@@ -187,11 +202,11 @@
                   <button type="button" class="btn btn-success"><i class="fa fa-plus"></i></button>
                 </div>
               </div>
-            </div>-->
+            </div>
           </div>
-           <!--/.box (chat box)--> 
+           /.box (chat box) 
 
-<!--           TO DO List 
+           TO DO List 
           <div class="box box-primary">
             <div class="box-header">
               <i class="ion ion-clipboard"></i>
@@ -337,10 +352,10 @@
 
         </section>
          /.Left col 
-         right col (We are only adding the ID to make the widgets sortable)-->
-        <!--<section class="col-lg-5 connectedSortable">-->
+         right col (We are only adding the ID to make the widgets sortable)
+        <section class="col-lg-5 connectedSortable">
 
-<!--           Map box 
+           Map box 
           <div class="box box-solid bg-light-blue-gradient">
             <div class="box-header">
                tools box 
@@ -383,10 +398,10 @@
                /.row 
             </div>
           </div>
-           /.box -->
+           /.box 
 
-           <!--solid sales graph--> 
-<!--          <div class="box box-solid bg-teal-gradient">
+           solid sales graph 
+          <div class="box box-solid bg-teal-gradient">
             <div class="box-header">
               <i class="fa fa-th"></i>
 
@@ -398,12 +413,12 @@
                 <button type="button" class="btn bg-teal btn-sm" data-widget="remove"><i class="fa fa-times"></i>
                 </button>
               </div>
-            </div>-->
+            </div>
             <div class="box-body border-radius-none">
               <div class="chart" id="line-chart" style="height: 250px;"></div>
             </div>
-             <!--/.box-body--> 
-<!--            <div class="box-footer no-border">
+             /.box-body 
+            <div class="box-footer no-border">
               <div class="row">
                 <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
                   <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60" data-fgColor="#39CCCC">
@@ -425,13 +440,13 @@
                  ./col 
               </div>
                /.row 
-            </div>-->
-             <!--/.box-footer--> 
-          <!--</div>-->
-           <!--/.box--> 
+            </div>
+             /.box-footer 
+          </div>
+           /.box 
 
-           <!--Calendar--> 
-<!--          <div class="box box-solid bg-green-gradient">
+           Calendar 
+          <div class="box box-solid bg-green-gradient">
             <div class="box-header">
               <i class="fa fa-calendar"></i>
 
@@ -504,42 +519,42 @@
               </div>
                /.row 
             </div>
-          </div>-->
-           <!--/.box--> 
+          </div>
+           /.box 
 
         </section>
-         <!--right col--> 
+         right col 
       </div>
-       <!--/.row (main row)--> 
+       /.row (main row) -->
   
 
     </section>
 <!--
    Morris.js charts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
   <script src="<?= base_url() ?>public/plugins/morris/morris.min.js"></script>
-   <!--Sparkline--> 
+   Sparkline 
   <script src="<?= base_url() ?>public/plugins/sparkline/jquery.sparkline.min.js"></script>
-   <!--jvectormap--> 
+   jvectormap 
   <script src="<?= base_url() ?>public/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
   <script src="<?= base_url() ?>public/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-   <!--jQuery Knob Chart--> 
+   jQuery Knob Chart 
   <script src="<?= base_url() ?>public/plugins/knob/jquery.knob.js"></script>
-   <!--daterangepicker--> 
+   daterangepicker 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
   <script src="<?= base_url() ?>public/plugins/daterangepicker/daterangepicker.js"></script>
-   <!--datepicker--> 
+   datepicker 
   <script src="<?= base_url() ?>public/plugins/datepicker/bootstrap-datepicker.js"></script>
-   <!--Bootstrap WYSIHTML5--> 
+   Bootstrap WYSIHTML5 
   <script src="<?= base_url() ?>public/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-   <!--Slimscroll--> 
+   Slimscroll 
   <script src="<?= base_url() ?>public/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-   <!--FastClick--> 
+   FastClick 
   <script src="<?= base_url() ?>public/plugins/fastclick/fastclick.js"></script>
-   <!--AdminLTE dashboard demo (This is only for demo purposes)--> 
+   AdminLTE dashboard demo (This is only for demo purposes) 
   <script src="<?= base_url() ?>public/dist/js/pages/dashboard.js"></script>
-   <!--AdminLTE for demo purposes--> 
-  <script src="<?= base_url() ?>public/dist/js/demo.js"></script>
+   AdminLTE for demo purposes 
+  <script src="<?= base_url() ?>public/dist/js/demo.js"></script>-->
 
 <script>
 $("#dashboard1").addClass('active');

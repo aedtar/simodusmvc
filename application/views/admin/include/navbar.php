@@ -95,7 +95,7 @@
             </ul>
           </li>-->
           <!-- Notifications: style can be found in dropdown.less -->
-          <li class="dropdown notifications-menu">
+<!--          <li class="dropdown notifications-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
               <span class="label label-warning">1</span>
@@ -103,19 +103,19 @@
             <ul class="dropdown-menu">
               <li class="header">You have 1 notifications</li>
               <li>
-                <!-- inner menu: contains the actual data -->
+                 inner menu: contains the actual data 
                 <ul class="menu">
                   <li>
                     <a href="#">
                       <i class="fa fa-users text-aqua"></i> Welcome
                     </a>
                   </li>
-<!--                  <li>
+                  <li>
                     <a href="#">
                       <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
                       page and may cause design problems
                     </a>
-                  </li>-->
+                  </li>
                   <li>
                     <a href="#">
                       <i class="fa fa-users text-red"></i> 5 new members joined
@@ -135,7 +135,7 @@
               </li>
               <li class="footer"><a href="#">View all</a></li>
             </ul>
-          </li>
+          </li>-->
           <!-- Tasks: style can be found in dropdown.less -->
 <!--          <li class="dropdown tasks-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -245,9 +245,9 @@
                 <div class="pull-right">
                   <a href="<?= site_url('admin/auth/logout'); ?>" class="btn btn-default btn-flat">Sign out</a>
                 </div>
-                <div class="pull-left">
+<!--                <div class="pull-left">
                   <a href="#" class="btn btn-default btn-flat">Change Password</a>
-                </div>
+                </div>-->
               </li>
             </ul>
           </li>

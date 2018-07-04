@@ -27,23 +27,25 @@
           <tr>
             <td><?= $row['no_dummy']; ?></td>
             <td><?= $row['no_meter_rusak']; ?></td>
-            <td><?= 
-                round
-                    (
-                        (
-                            (
-                                strtotime
-                                    (date("Y-m-d H:i:s"))
-                                    - 
-                                strtotime
-                                    (date("Y-m-d H:i:s",strtotime(
-                                            $row['tgl_pakai']
-                                            )))
-                            )
-                            /86400
-                        )
-                    ,1
-                    )
+            <td><?= (
+                    ($row['tgl_kembali']==NULL)
+                    )?
+                            round
+                                (
+                                    (
+                                        (
+                                            strtotime
+                                                (date("Y-m-d H:i:s"))
+                                                - 
+                                            strtotime
+                                                (date("Y-m-d H:i:s",strtotime(
+                                                        $row['tgl_pakai']
+                                                        )))
+                                        )
+                                        /86400
+                                    )
+                                ,1
+                                ):''
             ; 
             ?></td>
             <td><?= date("d-m-Y",strtotime($row['tgl_pakai'])); ?></td>
