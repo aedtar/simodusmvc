@@ -24,9 +24,9 @@
           <th>Lokasi Posko</th>
           <th>Call Center</th>
           
-            <?php if($this->session->userdata('is_admin') == 3   ) :?>
-          <th> Tindakan</th>
-          <?php endif; ?>
+            <?php // if($this->session->userdata('is_admin') == 1   ) :?>
+          <!--<th> Tindakan</th>-->
+          <?php // endif; ?>
               
         </tr>
         </thead>
@@ -38,16 +38,16 @@
             <td><?= $row['stand']; ?></td>
             <td><?= $row['nama']; ?></td>
             <td><?= $row['nama_cc']; ?></td>
-            <?php if($this->session->userdata('is_admin') == 3   ) :?>
-            <td class="text-right">
+            <?php // if($this->session->userdata('is_admin') == 1   ) :?>
+<!--            <td class="text-right">
                 <a href="<?= base_url('dummy/kembali/edit/'.$row['id_meter']); ?>" class="btn btn-warning btn-flat
                     ">Edit</a>
                 <a href="<?= base_url('dummy/kembali/del/'.$row['id_meter']); ?>" class="btn btn-danger btn-flat 
                    ">Delete
                 </a>
-            </td>
+            </td>-->
             
-          <?php endif; ?>
+          <?php // endif; ?>
           </tr>
           <?php endforeach; ?>
         </tbody>

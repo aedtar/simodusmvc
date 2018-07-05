@@ -3,9 +3,6 @@
 
 		public function entri_model($data,$data_stok,$no_dummy,$id){
 			$this->db->insert('tbl_metdum_kembali', $data);
-//                        $this->update_tbl_metdum_pakai($id);
-//			$this->load->model('dummy/stok_model', 'stok_model');
-//                        $this->stok_model->update_stok($data_stok,$no_dummy);
                         return true;
 		}
 

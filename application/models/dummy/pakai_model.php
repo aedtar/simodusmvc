@@ -12,7 +12,7 @@
 //                    untuk menghitung waktu operasi model ini
                         $this->benchmark->mark('code_start');
                                 $this->db->order_by('id_meter','desc');
-//                                $this->db->limit(150);
+                                $this->db->limit(150);
 //                                $this->db->like('unit', $this->session->userdata('unit'));
                                 $this->db->where('unit', $this->session->userdata('unit'));
                                 

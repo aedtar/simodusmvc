@@ -45,7 +45,7 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
       
       <ul class="sidebar-menu">
         <li id="dashboard" class="treeview">
-          <a href="<?= base_url('monitoring/dummy'); ?>"><i class="fa fa-dashboard"></i> <span>Monitoring Dummy</span>           
+          <a href="<?= base_url('dummy/monitoring'); ?>"><i class="fa fa-dashboard"></i> <span>Monitoring Dummy</span>           
           </a>
         </li>
       </ul>
@@ -68,12 +68,21 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
         </li>
       </ul>
 
-<!--      <ul class="sidebar-menu">
+      <ul class="sidebar-menu">
         <li id="dashboard" class="treeview">
-          <a href=""><i class="fa fa-folder"></i> <span>Laporan</span>           
+          <a href="#">
+            <i class="fa fa-folder"></i> <span>Laporan Gangguan LPB</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
           </a>
+          <ul class="treeview-menu">
+            <li id="DetailgangguanLPBperaktivasi"><a href="<?= base_url('dummy/laporan/add'); ?>"><i class="fa fa-circle-o"></i> Detail Gangguan</a></li>
+            <li id="LaporanGangguanMeter1"><a href="<?= base_url('adminlte/comingsoon'); ?>"><i class="fa fa-circle-o"></i> Indikasi per Merk Meter</a></li>
+          </ul>
         </li>
-      </ul>-->
+      </ul>
+
       
 <!--      <ul class="sidebar-menu">
         <li id="users" class="treeview">

@@ -119,6 +119,10 @@
 			$data['view'] = 'admin/adminlte/examples/404';
 			$this->load->view('admin/layout', $data);
 		}
+		public function comingsoon(){
+			$data['view'] = 'admin/adminlte/examples/comingsoon';
+			$this->load->view('admin/layout', $data);
+		}
 		public function errro500(){
 			$data['view'] = 'admin/adminlte/examples/500';
 			$this->load->view('admin/layout', $data);
