@@ -28,8 +28,8 @@
             <td><?= $row['no_dummy']; ?></td>
             <td><?= $row['no_meter_rusak']; ?></td>
             <td><?= (
-                    ($row['tgl_kembali']==NULL)
-                    )?
+                    ($row['tgl_pakai']==NULL)
+                    )?'':
                             round
                                 (
                                     (
@@ -45,10 +45,14 @@
                                         /86400
                                     )
                                 ,1
-                                ):''
+                                )
             ; 
             ?></td>
-            <td><?= date("d-m-Y",strtotime($row['tgl_pakai'])); ?></td>
+            <td><?= (
+                    ($row['tgl_pakai']==NULL)
+                    )?'':
+            date("d-m-Y",strtotime($row['tgl_pakai']))
+            ; ?></td>
             <td><?= (
                     ($row['tgl_aktivasi']==NULL)
                     )?'':
