@@ -68,12 +68,12 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
         </li>
       </ul>
 
-      <ul class="sidebar-menu">
+<!--      <ul class="sidebar-menu">
         <li id="dashboard" class="treeview">
           <a href=""><i class="fa fa-folder"></i> <span>Laporan</span>           
           </a>
         </li>
-      </ul>
+      </ul>-->
       
 <!--      <ul class="sidebar-menu">
         <li id="users" class="treeview">

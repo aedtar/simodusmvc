@@ -48,6 +48,8 @@
             <!--<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>-->
           </div>
         </div>
+        
+        
          <!--./col--> 
 <!--        <div class="col-lg-3 col-xs-6">
            small box 
@@ -83,9 +85,55 @@
        <!--/.row--> 
        
 
-        <!--pulanglah-->        
-       
-       
+        <!--pulanglah--> 
+        <!-- Datatable style -->
+<link rel="stylesheet" href="<?= base_url() ?>public/plugins/datatables/dataTables.bootstrap.css">  
+
+<div class="row">
+    <section class="col-lg-7 connectedSortable">
+        <div class="nav-tabs-custom">
+
+        <!-- <section class="content">
+           <div class="row">-->
+        <!--    <div class="box-header">
+            </div>-->
+            <!-- /.box-header -->
+            <div class="box-body table-responsive">
+              <table id="example1" class="table table-bordered table-striped ">
+                <thead>
+                <tr>
+                  <th>Tanggal Update</th>
+                  <th>Versi</th>
+                  <th>Informasi</th>
+                </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>5 Juli 2018</td>
+                    <td>2.2</td>
+                    <td>Perbaikan kecepatan database dan tampilan baru tiap update</td>
+                  <tr>
+                    <td>4 Juli 2018</td>
+                    <td>2.1</td>
+                    <td>Launching SIMODUS dalam framework Codeigniter</td>
+                  </tr>
+                </tbody>
+
+              </table>
+            </div>
+    <!-- /.box-body -->
+  </div>
+   <!--/.box--> 
+</section>  
+</div>
+
+<!-- DataTables -->
+<script src="<?= base_url() ?>public/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="<?= base_url() ?>public/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script>
+$("#view_users").addClass('active');
+</script>        
+
 
 <!--        Main row 
       <div class="row">

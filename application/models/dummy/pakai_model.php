@@ -11,11 +11,11 @@
 		public function get_all_users(){
 //                    untuk menghitung waktu operasi model ini
                         $this->benchmark->mark('code_start');
-
                                 $this->db->order_by('id_meter','desc');
-                                $this->db->limit(150);
-                                $this->db->like('unit', $this->session->userdata('unit'));
-        //                        $this->db->where('unit', $this->session->userdata('unit'));
+//                                $this->db->limit(150);
+//                                $this->db->like('unit', $this->session->userdata('unit'));
+                                $this->db->where('unit', $this->session->userdata('unit'));
+                                
 
                                 $query = $this->db->get('tbl_metdum_pakai');
                                 return $result = $query->result_array();
