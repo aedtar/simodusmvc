@@ -9,7 +9,7 @@
        <a href="<?= base_url('dummy/kembali/add'); ?>" class="btn btn-info btn-flat
                     <?=(
                             $this->session->userdata('is_admin') == 5                        
-                        )?'':'disabled'
+                        )?'':'hidden'
                     ?>
                    ">Tambah Data
        </a>
@@ -23,7 +23,11 @@
           <th>Stand Bongkar</th>
           <th>Lokasi Posko</th>
           <th>Call Center</th>
-          <th style="width: 150px;" class="text-right">Tindakan</th>
+          
+            <?php if($this->session->userdata('is_admin') == 3   ) :?>
+          <th> Tindakan</th>
+          <?php endif; ?>
+              
         </tr>
         </thead>
         <tbody>
@@ -34,23 +38,16 @@
             <td><?= $row['stand']; ?></td>
             <td><?= $row['nama']; ?></td>
             <td><?= $row['nama_cc']; ?></td>
+            <?php if($this->session->userdata('is_admin') == 3   ) :?>
             <td class="text-right">
                 <a href="<?= base_url('dummy/kembali/edit/'.$row['id_meter']); ?>" class="btn btn-warning btn-flat
-                    <?=(
-                            $this->session->userdata('is_admin') == 3                        
-                        )?'disabled':'disabled'
-                    ?>
-                   ">Edit
-                </a>
+                    ">Edit</a>
                 <a href="<?= base_url('dummy/kembali/del/'.$row['id_meter']); ?>" class="btn btn-danger btn-flat 
-                    <?=(
-                            $this->session->userdata('is_admin') == 3                        
-                        )?'disabled':'disabled'
-                    ?>
-                    ">Delete
+                   ">Delete
                 </a>
             </td>
             
+          <?php endif; ?>
           </tr>
           <?php endforeach; ?>
         </tbody>

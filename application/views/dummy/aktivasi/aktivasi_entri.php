@@ -18,6 +18,9 @@
             <?php endif; ?>
            
             <?php echo form_open(base_url('dummy/aktivasi/entri/'.$dummy['id_meter']), 'class="form-horizontal"' )?> 
+            
+            
+            
               <div class="form-group">
                 <label for="no_dummy" class="col-sm-2 control-label">Nomor Dummy</label>
 
@@ -74,7 +77,6 @@
                 </div>
               </div>
             
-            
               <div class="form-group">
                 <label for="id_pelanggan" class="col-sm-2 control-label"> Idpel </label>
                 <div class="col-sm-9">
@@ -95,6 +97,7 @@
                   <input type="text" name="nama" class="form-control" id="nama" placeholder="">
                 </div>
               </div>
+            
             
             
                         
