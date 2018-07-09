@@ -59,7 +59,7 @@
 <!--    <div class="box-header">
       <h3 class="box-title"> Detail Gangguan <?= ucwords($this->session->userdata('unit')); ?></h3>
     </div>-->
-       <a href="<?= base_url('dummy/laporan/exportbulanan/data1'); ?>
+       <a href="<?= base_url('dummy/laporan/exportbulanan($data)'); ?>
           " class="btn btn-info btn-flat
                     <?=(
                             $this->session->userdata('is_admin') == 4 

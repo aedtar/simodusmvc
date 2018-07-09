@@ -24,13 +24,13 @@
 					$this->load->view('admin/layout', $data);
 				}
 				else{
-					$data1 = array(
+					$data['entri'] = array(
                                                 'tgl_awal' => $this->input->post('tgl_awal'),
                                                 'tgl_akhir' => $this->input->post('tgl_akhir'),
 					);
                                         
-                                        $data1 = $this->security->xss_clean($data1);
-                                        $data['all_data'] =  $this->laporan_model->get_all_data_bulanan($data1);
+                                        $data['entri'] = $this->security->xss_clean($data1);
+                                        $data['all_data'] =  $this->laporan_model->get_all_data_bulanan($data['entri']);
                                         $data['view'] = 'dummy/laporan/detailgangguan';
                                         $this->load->view('admin/layout', $data);
 					
@@ -44,8 +44,8 @@
 		}
                 
 		
-		public function exportbulanan($data1){
-			$data['all_data'] =  $this->laporan_model->get_all_data_bulanan($data1);
+		public function exportbulanan($data){
+			$data['all_data'] =  $this->laporan_model->get_all_data_bulanan($data);
 			$this->load->view('dummy/laporan/excel_bulanan', $data);
 		}
 		 

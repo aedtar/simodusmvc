@@ -39,17 +39,17 @@
                         $this->benchmark->mark('code_end');
                     
 		}
-
-		public function get_dummy(){
-                        $tes='ready';
-                        $this->db->order_by('no_dummy','asc');
-                        $this->db->where('unit', $this->session->userdata('unit'));
-                        $this->db->where('status', $tes);
-                        $query = $this->db->get('tbl_metdum_stok');
-                        
-			return $result = $query->result_array();
-		}
-                                
+//
+//		public function get_dummy(){
+//                        $tes='ready';
+//                        $this->db->order_by('no_dummy','asc');
+//                        $this->db->where('unit', $this->session->userdata('unit'));
+//                        $this->db->where('status', $tes);
+//                        $query = $this->db->get('tbl_metdum_stok');
+//                        
+//			return $result = $query->result_array();
+//		}
+//                                
                 
                 
 		public function get_dummy_by_id($id){

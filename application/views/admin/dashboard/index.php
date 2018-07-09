@@ -111,7 +111,7 @@
                   <tr>
                     <td>5 Juli 2018</td>
                     <td>2.2</td>
-                    <td>Perbaikan struktur database dan tampilan baru tiap update</td>
+                    <td>Perbaikan kecepatan database dan tampilan baru tiap update</td>
                   <tr>
                     <td>4 Juli 2018</td>
                     <td>2.1</td>

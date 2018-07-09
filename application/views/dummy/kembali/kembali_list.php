@@ -21,7 +21,6 @@
           <th>Tanggal Kembali</th>
           <th>Nomor Dummy</th>
           <th>Stand Bongkar</th>
-          <th>Lokasi Posko</th>
           <th>Call Center</th>
           
             <?php // if($this->session->userdata('is_admin') == 1   ) :?>
@@ -37,7 +36,6 @@
             <td><?= $row['no_dummy']; ?></td>
             <td><?= $row['stand']; ?></td>
             <td><?= $row['nama']; ?></td>
-            <td><?= $row['nama_cc']; ?></td>
             <?php // if($this->session->userdata('is_admin') == 1   ) :?>
 <!--            <td class="text-right">
                 <a href="<?= base_url('dummy/kembali/edit/'.$row['id_meter']); ?>" class="btn btn-warning btn-flat

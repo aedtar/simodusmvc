@@ -1,10 +1,10 @@
 <?php
 	class Kembali_model extends CI_Model{
-
-		public function entri_model($data,$data_stok,$no_dummy,$id){
-			$this->db->insert('tbl_metdum_kembali', $data);
-                        return true;
-		}
+//
+//		public function entri_model($data,$data_stok,$no_dummy,$id){
+//			$this->db->insert('tbl_metdum_kembali', $data);
+//                        return true;
+//		}
 
 		public function add_kembali($data,$data_stok,$no_dummy,$id){
 			$this->db->insert('tbl_metdum_kbl', $data);
@@ -26,17 +26,17 @@
                         $this->benchmark->mark('code_end');
                     
 		}
-
-		public function get_histori(){
-//                    untuk menghitung waktu operasi model ini
-                        $this->benchmark->mark('code_start');
-                                $this->db->order_by('tgl_aktivasi','asc');
-                                $this->db->where('unit', $this->session->userdata('unit'));
-                                $query = $this->db->get('tbl_aktivasi');
-                                return $result = $query->result_array();
-                        $this->benchmark->mark('code_end');
-                    
-		}
+//
+//		public function get_histori(){
+////                    untuk menghitung waktu operasi model ini
+//                        $this->benchmark->mark('code_start');
+//                                $this->db->order_by('tgl_aktivasi','asc');
+//                                $this->db->where('unit', $this->session->userdata('unit'));
+//                                $query = $this->db->get('tbl_aktivasi');
+//                                return $result = $query->result_array();
+//                        $this->benchmark->mark('code_end');
+//                    
+//		}
 
 		public function get_dummy_kbl(){
                         $this->db->order_by('no_dummy','asc');
@@ -50,18 +50,18 @@
 			return $result = $query->result_array();
 		}
                                 
-
-		public function get_dummy(){
-                        $tes='ready';
-                        $this->db->order_by('no_dummy','asc');
-                        $this->db->where('unit', $this->session->userdata('unit'));
-                        $this->db->where('status', $tes);
-                        $query = $this->db->get('tbl_metdum_');
-                        
-			return $result = $query->result_array();
-		}
-                                
-                
+//
+//		public function get_dummy(){
+//                        $tes='ready';
+//                        $this->db->order_by('no_dummy','asc');
+//                        $this->db->where('unit', $this->session->userdata('unit'));
+//                        $this->db->where('status', $tes);
+//                        $query = $this->db->get('tbl_metdum_');
+//                        
+//			return $result = $query->result_array();
+//		}
+//                                
+//                
                 
 		public function get_dummy_by_id_kbl($id){
                         $this->db->where('id_meter', $id);
@@ -69,10 +69,10 @@
 			return $result = $query->row_array();
 		}
                 
-		public function get_dummy_by_id($id){
-			$query = $this->db->get_where('tbl_metdum_pakai', array('id_meter' => $id));
-			return $result = $query->row_array();
-		}
+//		public function get_dummy_by_id($id){
+//			$query = $this->db->get_where('tbl_metdum_pakai', array('id_meter' => $id));
+//			return $result = $query->row_array();
+//		}
                 
 		public function update_tbl_metdum_pakai($id){
                         $tes = 'sudah';
