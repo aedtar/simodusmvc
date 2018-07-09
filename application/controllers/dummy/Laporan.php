@@ -14,7 +14,7 @@
 //			$this->load->view('admin/layout', $data);
 //		}
 		
-		public function add($data1=0){
+		public function add(){
 			if($this->input->post('submit')){
 
                                 $this->form_validation->set_rules('tgl_awal', 'Tanggal', 'trim|required');
@@ -24,15 +24,15 @@
 					$this->load->view('admin/layout', $data);
 				}
 				else{
-					$data1['entri'] = array(
+					$data1= array(
                                                 'tgl_awal' => $this->input->post('tgl_awal'),
                                                 'tgl_akhir' => $this->input->post('tgl_akhir'),
 					);
-                                        
-                                        $data1['entri'] = $this->security->xss_clean($data1);
-                                        $data['all_data'] =  $this->laporan_model->get_all_data_bulanan($data1['entri']);
-                                        $data['view'] = 'dummy/laporan/excel_bulanan';
-                                        $this->load->view('admin/layout', $data);
+//                                        
+//                                        $data1['entri'] = $this->security->xss_clean($data1);
+                                        $data['all_data'] =  $this->laporan_model->get_all_data_bulanan($data1);
+//                                        $data['view'] = 'dummy/laporan/excel_bulanan';
+                                        $this->load->view( 'dummy/laporan/excel_bulanan',$data);
 					
 				}
 			}
