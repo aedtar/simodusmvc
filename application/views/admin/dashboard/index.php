@@ -109,6 +109,11 @@
                 </thead>
                 <tbody>
                   <tr>
+                    <td>9 Juli 2018</td>
+                    <td>2.3.2</td>
+                    <td>tambah menu meter dummy belum kembali</td>
+                  <tr>
+                  <tr>
                     <td>5 Juli 2018</td>
                     <td>2.2</td>
                     <td>Perbaikan kecepatan database dan tampilan baru tiap update</td>

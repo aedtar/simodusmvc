@@ -24,14 +24,14 @@
 					$this->load->view('admin/layout', $data);
 				}
 				else{
-					$data['entri'] = array(
+					$data1['entri'] = array(
                                                 'tgl_awal' => $this->input->post('tgl_awal'),
                                                 'tgl_akhir' => $this->input->post('tgl_akhir'),
 					);
                                         
-                                        $data['entri'] = $this->security->xss_clean($data1);
-                                        $data['all_data'] =  $this->laporan_model->get_all_data_bulanan($data['entri']);
-                                        $data['view'] = 'dummy/laporan/detailgangguan';
+                                        $data1['entri'] = $this->security->xss_clean($data1);
+                                        $data['all_data'] =  $this->laporan_model->get_all_data_bulanan($data1['entri']);
+                                        $data['view'] = 'dummy/laporan/excel_bulanan';
                                         $this->load->view('admin/layout', $data);
 					
 				}
@@ -44,10 +44,10 @@
 		}
                 
 		
-		public function exportbulanan($data){
-			$data['all_data'] =  $this->laporan_model->get_all_data_bulanan($data);
-			$this->load->view('dummy/laporan/excel_bulanan', $data);
-		}
+//		public function exportbulanan($data){
+//			$data['all_data'] =  $this->laporan_model->get_all_data_bulanan($data);
+//			$this->load->view('dummy/laporan/excel_bulanan', $data);
+//		}
 		 
 	}
 

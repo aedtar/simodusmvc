@@ -18,7 +18,7 @@
           <th>Tanggal Pakai</th>
           <th>Tanggal Aktivasi</th>
           <th>Tanggal Kembali</th>
-          <th>Hari Layanan</th>
+          <th>Lama Standby</th>
           <th>Posko</th>
         </tr>
         </thead>

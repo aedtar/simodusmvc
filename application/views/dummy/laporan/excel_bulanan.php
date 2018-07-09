@@ -1,13 +1,3 @@
-<!--  Datatable style 
-<link rel="stylesheet" href="<?= base_url() ?>public/plugins/datatables/dataTables.bootstrap.css">  -->
-
-<!-- <section class="content">
-   <div class="box">
-    <div class="box-header">
-      <h3 class="box-title">Monitoring Dummy <?= ucwords($this->session->userdata('unit')); ?></h3>
-    </div>-->
-       
-    <!-- /.box-header -->
 <div class="box-body table-responsive">
 <?php 
 header("Content-type: application/octet-stream");

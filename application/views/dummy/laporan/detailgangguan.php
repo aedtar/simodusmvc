@@ -50,15 +50,15 @@
 
 </section> 
 
-
-<!-- Datatable style -->
+<!--
+ Datatable style 
 <link rel="stylesheet" href="<?= base_url() ?>public/plugins/datatables/dataTables.bootstrap.css">  
 
  <section class="content">
    <div class="box">
-<!--    <div class="box-header">
+    <div class="box-header">
       <h3 class="box-title"> Detail Gangguan <?= ucwords($this->session->userdata('unit')); ?></h3>
-    </div>-->
+    </div>
        <a href="<?= base_url('dummy/laporan/exportbulanan($data)'); ?>
           " class="btn btn-info btn-flat
                     <?=(
@@ -70,7 +70,7 @@
                    ">Export Excel
        </a>
        
-    <!-- /.box-header -->
+     /.box-header 
     <div class="box-body table-responsive">
       <table id="example1" class="table table-bordered table-striped ">
         <thead>
@@ -154,16 +154,11 @@
        
       </table>
     </div>
-    <!-- /.box-body -->
+     /.box-body 
   </div>
-  <!-- /.box -->
-</section>  
+   /.box 
+</section>  -->
 
-<!--menampilkan waktu operasi-->
-Page rendered in
-<?php echo 
-$this->benchmark->elapsed_time();?>
- seconds
 
 <!-- DataTables -->
 <script src="<?= base_url() ?>public/plugins/datatables/jquery.dataTables.min.js"></script>
