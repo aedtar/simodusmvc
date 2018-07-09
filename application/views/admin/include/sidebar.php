@@ -9,7 +9,7 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="<?= base_url() ?>public/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="<?= base_url() ?>public/dist/img/lambang.png" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p><?= ucwords($this->session->userdata('name')); ?></p>
