@@ -51,20 +51,24 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
       </ul>-->
       
       
+<?php if($this->session->userdata('is_admin') == 4
+        ||
+        $this->session->userdata('is_admin') == 3): ?>
       <ul class="sidebar-menu">
         <li id="dashboard" class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Monitoring</span>
+            <i class="fa fa-dashboard "></i> <span>Monitoring</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li id="total"><a href="<?= base_url('dummy/monitoring'); ?>"><i class="fa fa-circle-o"></i> Hari Layanan</a></li>
+              <li id="total"><a href="<?= base_url('dummy/monitoring');?>   "><i class="fa fa-circle-o"></i> Hari Layanan</a></li>
             <li id="notkembali"><a href="<?= base_url('dummy/monitoring/belumbalik'); ?>"><i class="fa fa-circle-o"></i> Dummy belum kembali</a></li>
           </ul>
         </li>
       </ul>
+<?php                    endif;?>
       
       <ul class="sidebar-menu">
         <li id="dashboard" class="treeview">
@@ -81,6 +85,25 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
           </ul>
         </li>
       </ul>
+      
+<?php if($this->session->userdata('is_admin') == 4
+        ||
+        $this->session->userdata('is_admin') == 3): ?>
+      <ul class="sidebar-menu">
+        <li id="Entrigantimeter" class="treeview">
+          <a href="#">
+            <i class="fa fa-dashboard "></i> <span>Tanpa Dummy</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li id="paska"><a href="<?= base_url('gantimeter/gantimeter');?>"><i class="fa fa-circle-o"></i>Paska Bayar</a></li>
+            <!--<li id="prabayar"><a href="<?= base_url('dummy/monitoring/belumbalik'); ?>"><i class="fa fa-circle-o"></i> Prabayar</a></li>-->
+          </ul>
+        </li>
+      </ul>
+<?php                    endif;?>
 
 <!--      <ul class="sidebar-menu">
         <li id="dashboard" class="treeview">
