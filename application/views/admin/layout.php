@@ -53,17 +53,19 @@
 				</section>
 				<!--main content end-->
 				<!--footer start-->
-				<footer class="main-footer">
-					<strong>Copyright © 2017 <a href="#">Codeglamour</a></strong> All rights
-					reserved.
-				</footer>
+				
 				<!--footer end-->
 			</section>
 
 			<!-- /.control-sidebar -->
 			<?php include('include/control_sidebar.php'); ?>
+			<footer class="main-footer">
+					<strong>Copyright © 2017 <a href="#">Codeglamour</a></strong> All rights
+					reserved.
+				</footer>
 
-	</div>	
+	</div>
+
     
 	
 	<!-- Bootstrap 3.3.6 -->
