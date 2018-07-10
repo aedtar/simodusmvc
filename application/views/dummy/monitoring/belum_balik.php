@@ -16,6 +16,7 @@
           <th>Nomor Dummy</th>
           <th>Nomor Meter Rusak</th>
           <th>Nomor Meter Baru</th>
+          <th>Nama Pelanggan</th>
           <th>Nomor HP Pelanggan</th>
           <th>Petugas Pasang Dummy</th>
           <th>Tanggal AKtivasi</th>
@@ -28,6 +29,7 @@
             <td><?= $row['no_dummy']; ?></td>
             <td><?= $row['no_meter_rusak']; ?></td>
             <td><?= $row['no_meter_baru']; ?></td>
+            <td><?= $row['nama_pel']; ?></td>
             <td><?= $row['no_hp_plg']; ?></td>
             <td><?= $row['ptgs_pasang']; ?></td>
             <td><?= $row['tgl_aktivasi']; ?></td>

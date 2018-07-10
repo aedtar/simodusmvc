@@ -18,15 +18,16 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
         </div>
         <!-- menu -->
         <ul class="sidebar-menu">     
-        <?php if($this->session->userdata('is_admin') == 4
-                ||
-                $this->session->userdata('is_admin') == 3): ?>
                     <li class="header">Menu Sistem</li>
                     <li id="dashboard" class="treeview">
                       <a href="<?php echo site_url('/admin/dashboard'); ?>">
                         <i class="fa fa-home "></i> <span>Home</span>
                       </a>
                     </li>
+                    
+        <?php if($this->session->userdata('is_admin') == 4
+                ||
+                $this->session->userdata('is_admin') == 3): ?>
                     <li id="dashboard" class="treeview">
                       <a href="#">
                         <i class="fa fa-dashboard "></i> <span>Monitoring</span>
@@ -41,9 +42,6 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
                     </li>
         <?php endif;?>
 
-        <?php if($this->session->userdata('is_admin') == 4
-                ||
-                $this->session->userdata('is_admin') == 3): ?>
                 <li id="dashboard" class="treeview">
                   <a href="#">
                     <i class="fa fa-list"></i> <span>Dummy</span>
@@ -58,13 +56,14 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
                   </ul>
                 </li>
 
-        <?php endif;?>
 
 
 
-        <?php if($this->session->userdata('is_admin') == 4
-                ||
-                $this->session->userdata('is_admin') == 3): ?>
+        <?php if($this->session->userdata('is_admin') == 3
+                &&
+                $this->session->userdata('unit') == 18301
+            
+            ): ?>
                 <li id="Entrigantimeter" class="treeview">
                   <a href="#">
                     <i class="glyphicon glyphicon-refresh"></i> <span>Ganti Meter</span>
@@ -78,11 +77,7 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
                     <li id="meterdummykembali"><a href="<?= base_url('#'); ?>"><i class="glyphicon glyphicon-floppy-saved"></i>Input Data Selesai</a></li>
                   </ul>
                   </li>
-        <?php endif;?>
-
-        <?php if($this->session->userdata('is_admin') == 4
-                ||
-                $this->session->userdata('is_admin') == 3): ?>
+                  
                 <li class="treeview">
                 <a href="#">
                   <i class="glyphicon glyphicon-folder-close"></i> <span>Data Induk Langganan</span>
@@ -99,9 +94,6 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
 
         <?php endif;?>
 
-        <?php if($this->session->userdata('is_admin') == 4
-                ||
-                $this->session->userdata('is_admin') == 3): ?>
                 <li class="header">Administrator</li>
                   <li class="treeview">
                     <a  href="<?php echo site_url('/admin/auth/logout'); ?>">
@@ -111,7 +103,6 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
                         </span>
                     </a>
                 </li>
-        <?php endif;?> 
     </ul>
   </section>
 </aside>

@@ -3,6 +3,14 @@
 
 		public function add_pakai($data,$data_stok,$no_dummy){
 			$this->db->insert('tbl_metdum_pakai', $data);
+                        $lastid= $this->db->insert_id();
+                        $data_last=array(
+                            'id_dummy' => $lastid
+                        );
+                        $this->db->where('no_dummy', $no_dummy);
+                        $this->db->where('unit', $this->session->userdata('unit'));
+			$this->db->update('tbl_metdum_stok', $data_last);
+                        
 			$this->load->model('dummy/stok_model', 'stok_model');
                         $this->stok_model->update_stok($data_stok,$no_dummy);
                         return true;

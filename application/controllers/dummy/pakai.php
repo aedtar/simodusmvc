@@ -25,6 +25,7 @@
                                 $this->form_validation->set_rules('no_hp_plg', 'No HP pelanggan', 'trim|required');
                                 $this->form_validation->set_rules('nama_cc', 'Nama Call Center', 'trim|required');
                                 $this->form_validation->set_rules('std_dummy', 'Stand Dummy', 'trim|required');
+                                $this->form_validation->set_rules('nama_pel', 'Stand Dummy', 'trim|required');
 
 				if ($this->form_validation->run() == FALSE) {
 					$data['view'] = 'dummy/pakai/pakai_add';
@@ -43,6 +44,7 @@
                                                 'nama_cc' => $this->input->post('nama_cc'),
                                                 'no_dummy' => $this->input->post('no_dummy'),
                                                 'std_dummy' => $this->input->post('std_dummy'),
+                                                'nama_pel' => $this->input->post('nama_pel'),
                                                 'aktivasi' => 'non aktif',
                                                 'kembali' => 'belum',
                                                 'nama' => $this->session->userdata('name'),
