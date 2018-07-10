@@ -11,17 +11,13 @@
 		public function get_all_users(){
 //                    untuk menghitung waktu operasi model ini
                         $this->benchmark->mark('code_start');
-                                $this->db->order_by('id_meter','desc');
                                 $this->db->limit(150);
-//                                $this->db->like('unit', $this->session->userdata('unit'));
                                 $this->db->where('unit', $this->session->userdata('unit'));
-                                
-
+                                $this->db->select('tgl_pakai,no_dummy,no_meter_rusak,alasan_rusak,std_dummy,sisa_pulsa,nama_cc,aktivasi,id_meter');
+                                $this->db->order_by('id_meter','desc');
                                 $query = $this->db->get('tbl_metdum_pakai');
                                 return $result = $query->result_array();
-
-                        $this->benchmark->mark('code_end');
-                    
+                        $this->benchmark->mark('code_end');                    
 		}
 
 		public function get_dummy(){
@@ -29,8 +25,7 @@
                         $this->db->order_by('no_dummy','asc');
                         $this->db->where('unit', $this->session->userdata('unit'));
                         $this->db->where('status', $tes);
-                        $query = $this->db->get('tbl_metdum_stok');
-                        
+                        $query = $this->db->get('tbl_metdum_stok');                        
 			return $result = $query->result_array();
 		}
                                 
