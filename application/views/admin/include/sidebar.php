@@ -9,24 +9,13 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="<?= base_url() ?>public/dist/img/lambang.png" class="img-circle" alt="User Image">
+          <img src="<?= base_url() ?>public/dist/img/lambang.png" class="img-square" alt="User Image">
         </div>
         <div class="pull-left info">
           <p><?= ucwords($this->session->userdata('name')); ?></p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
-      <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search123...">
-              <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-        </div>
-      </form>
-      <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
 <!--      <ul class="sidebar-menu">
         <li id="dashboard" class="treeview">
@@ -55,6 +44,12 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
         ||
         $this->session->userdata('is_admin') == 3): ?>
       <ul class="sidebar-menu">
+        <li class="header">Menu Sistem</li>
+        <li id="dashboard" class="treeview">
+          <a href="<?php echo site_url('/admin/dashboard'); ?>">
+            <i class="fa fa-home "></i> <span>Home</span>
+          </a>
+        </li>
         <li id="dashboard" class="treeview">
           <a href="#">
             <i class="fa fa-dashboard "></i> <span>Monitoring</span>
@@ -68,12 +63,12 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
           </ul>
         </li>
       </ul>
-<?php                    endif;?>
+<?php endif;?>
       
       <ul class="sidebar-menu">
         <li id="dashboard" class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Dummy</span>
+            <i class="fa fa-list"></i> <span>Dummy</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -92,7 +87,7 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
       <ul class="sidebar-menu">
         <li id="Entrigantimeter" class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard "></i> <span>Tanpa Dummy</span>
+            <i class="fa fa-list-ul "></i> <span>Non Dummy</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -102,8 +97,17 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
             <!--<li id="prabayar"><a href="<?= base_url('dummy/monitoring/belumbalik'); ?>"><i class="fa fa-circle-o"></i> Prabayar</a></li>-->
           </ul>
         </li>
+        <li class="treeview">
+          <a  href="<?php echo site_url('/admin/auth/logout'); ?>">
+              <i class="fa fa-power-off"></i>
+              <span>Logout</span>
+                <span class="pull-right-container">
+              </span>
+          </a>
+      </li>
       </ul>
-<?php                    endif;?>
+<?php                    
+endif;?>
 
 <!--      <ul class="sidebar-menu">
         <li id="dashboard" class="treeview">
