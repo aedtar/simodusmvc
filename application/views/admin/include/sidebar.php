@@ -54,7 +54,6 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
 <?php if($this->session->userdata('is_admin') == 4
         ||
         $this->session->userdata('is_admin') == 3): ?>
-
       <ul class="sidebar-menu">
         <li id="dashboard" class="treeview">
           <a href="#">
@@ -87,11 +86,9 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
         </li>
       </ul>
       
-
 <?php if($this->session->userdata('is_admin') == 4
         ||
         $this->session->userdata('is_admin') == 3): ?>
-
       <ul class="sidebar-menu">
         <li id="Entrigantimeter" class="treeview">
           <a href="#">
@@ -102,27 +99,26 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
           </a>
           <ul class="treeview-menu">
             <li id="paska"><a href="<?= base_url('gantimeter/gantimeter');?>"><i class="fa fa-circle-o"></i>Paska Bayar</a></li>
-            <!--<li id="prabayar"><a href="<?= base_url('adminlte/comingsoon'); ?>"><i class="fa fa-circle-o"></i> Prabayar</a></li>-->
+            <!--<li id="prabayar"><a href="<?= base_url('dummy/monitoring/belumbalik'); ?>"><i class="fa fa-circle-o"></i> Prabayar</a></li>-->
           </ul>
         </li>
       </ul>
+<?php                    endif;?>
 
-      <ul class="sidebar-menu">
+<!--      <ul class="sidebar-menu">
         <li id="dashboard" class="treeview">
           <a href="#">
-            <i class="fa fa-folder"></i> <span>Download Laporan</span>
+            <i class="fa fa-folder"></i> <span>Laporan Gangguan LPB</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li id="DetailgangguanLPBperaktivasi"><a href="<?= base_url('dummy/laporan/add'); ?>"><i class="fa fa-circle-o"></i>Dummy</a></li>
-            <!--<li id="LaporanGangguanMeter1"><a href="<?= base_url('adminlte/comingsoon'); ?>"><i class="fa fa-circle-o"></i> Indikasi per Merk Meter</a></li>-->
+            <li id="DetailgangguanLPBperaktivasi"><a href="<?= base_url('dummy/laporan/add'); ?>"><i class="fa fa-circle-o"></i> Detail Gangguan</a></li>
+            <li id="LaporanGangguanMeter1"><a href="<?= base_url('adminlte/comingsoon'); ?>"><i class="fa fa-circle-o"></i> Indikasi per Merk Meter</a></li>
           </ul>
         </li>
-      </ul>
-
-<?php                    endif;?>
+      </ul>-->
 
       
 <!--      <ul class="sidebar-menu">

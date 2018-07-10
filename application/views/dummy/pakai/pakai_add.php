@@ -67,13 +67,6 @@
               </div>
 
               <div class="form-group">
-                <label for="pelapor" class="col-sm-2 control-label">Pelapor</label>
-                <div class="col-sm-9">
-                    <input type="text" name="pelapor" class="form-control" id="pelapor" placeholder="">
-                </div>
-              </div>
-            
-              <div class="form-group">
                 <label for="no_meter_rusak" class="col-sm-2 control-label">Nomor Meter Rusak</label>
                 <div class="col-sm-9">
                   <input type="number" name="no_meter_rusak" class="form-control" id="no_meter_rusak" placeholder="">
@@ -91,13 +84,6 @@
                 <label for="sisa_pulsa" class="col-sm-2 control-label">Sisa Pulsa</label>
                 <div class="col-sm-9">
                   <input type="number" name="sisa_pulsa" class="form-control" id="sisa_pulsa" placeholder="">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="pelapor" class="col-sm-2 control-label">Pelapor</label>
-                <div class="col-sm-9">
-                    <input type="text" name="pelapor" class="form-control" id="pelapor" placeholder="">
                 </div>
               </div>
             
