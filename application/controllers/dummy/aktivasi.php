@@ -48,7 +48,7 @@
 					);
                                         
                                         $edit_pakai = array(
-                                                'alasan_rusak' => $this->input->post('alsan_rusak'),
+                                                'alasan_rusak' => $this->input->post('alasan_rusak'),
                                                 'sisa_pulsa' => $this->input->post('sisa_pulsa'),
                                             
                                         );
@@ -60,7 +60,7 @@
                                         );
                                         
 					$data = $this->security->xss_clean($data);
-					$result = $this->aktivasi_model->entri_model($data,$data_stok,$no_dummy,$id);
+					$result = $this->aktivasi_model->entri_model($data,$data_stok,$no_dummy,$id,$edit_pakai);
 					if($result){
 						$this->session->set_flashdata('msg', 'Record is Updated Successfully!');
 						redirect(base_url('dummy/aktivasi'));

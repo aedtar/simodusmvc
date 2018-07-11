@@ -4,33 +4,31 @@
  <section class="content">
    <div class="box">
     <div class="box-header">
-      <h3 class="box-title">Pemakaian Dummy <?= ucwords($this->session->userdata('unit')); ?></h3>
+      <h3 class="box-title">Penggunaan Dummy Unit <?= ucwords($this->session->userdata('unit')); ?></h3>
     </div>
-       <a href="<?= base_url('dummy/pakai/add'); ?>" class="btn btn-info btn-flat
-                    <?=(
-                            $this->session->userdata('is_admin') == 5                        
-                        )?'':'disabled'
-                    ?>
-                   ">Tambah Data
-       </a>
+    <?php if($this->session->userdata('is_admin') == 5): ?>
+       <a href="<?= base_url('dummy/pakai/add'); ?>" class="btn btn-info btn-flat">Tambah Data</a>
+    <?php endif;?>
     <!-- /.box-header -->
     <div class="box-body table-responsive">
       <table id="example1" class="table table-bordered table-striped ">
         <thead>
         <tr>
-          <th>Tanggal Pemakaian</th>
-          <th>Nomor Dummy</th>
-          <th>Nomor Meter Rusak</th>
-          <th>Alasan Rusak</th>
-          <th>Stand Dummy</th>
-          <th>Sisa Pulsa</th>
-          <th>Call Center</th>
-          <th style="width: 150px;" class="text-right">Tindakan</th>
+            <th>Tanggal Pemakaian</th>
+            <th>Nomor Dummy</th>
+            <th>Nomor Meter Rusak</th>
+            <th>Alasan Rusak</th>
+            <th>Stand Dummy</th>
+            <th>Sisa Pulsa</th>
+            <th>Call Center</th>                       
+        <?php if($this->session->userdata('is_admin') == 3): ?>
+            <th style="width: 150px;" class="text-right">Tindakan</th>   
+        <?php endif;?>
         </tr>
         </thead>
         <tbody>
-          <?php foreach($all_users as $row): ?>
-          <tr>
+        <?php foreach($all_users as $row): ?>
+        <tr>
             <td><?= $row['tgl_pakai']; ?></td>
             <td><?= $row['no_dummy']; ?></td>
             <td><?= $row['no_meter_rusak']; ?></td>
@@ -103,30 +101,18 @@
             </td>
             <td><?= $row['std_dummy']; ?></td>
             <td><?= $row['sisa_pulsa']; ?></td>
-            <td><?= $row['nama_cc']; ?></td>
+            <td><?= $row['nama_cc']; ?></td>            
+            <?php if($this->session->userdata('is_admin') == 3): ?>
             <td class="text-right">
-                <a href="<?= base_url('dummy/pakai/edit/'.$row['id_meter']); ?>" class="btn btn-warning btn-flat
-                    <?=(
-                            $this->session->userdata('is_admin') == 3                        
-                        )?'':'disabled'
-                    ?>
-                   ">Edit
-                </a>
-                <a href="<?= base_url('dummy/pakai/del/'.$row['id_meter']); ?>" class="btn btn-danger btn-flat 
-                    <?=(
-                            $row['aktivasi']=='non aktif' 
-                            && 
-                            $this->session->userdata('is_admin') == 3                        
-                        )?'':'disabled'
-                    ?>
-                    ">Delete
-                </a>
+                <a href="<?= base_url('dummy/pakai/edit/'.$row['id_meter']); ?>" class="btn btn-warning btn-flat">Edit</a> 
+                <?php if($row['aktivasi']=='non aktif'):?>
+                <a href="<?= base_url('dummy/pakai/del/'.$row['id_meter']); ?>" class="btn btn-danger btn-flat">Delete</a>
+                <?php endif;?>
             </td>
-            
-          </tr>
-          <?php endforeach; ?>
-        </tbody>
-       
+            <?php endif;?>            
+        </tr>
+        <?php endforeach; ?>
+        </tbody>       
       </table>
     </div>
     <!-- /.box-body -->

@@ -41,43 +41,57 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
                       </ul>
                     </li>
         <?php endif;?>
-
-                <li id="dashboard" class="treeview">
-                  <a href="#">
-                    <i class="fa fa-list"></i> <span>Dummy</span>
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li id="pemakaiandummy"><a href="<?= base_url('dummy/pakai'); ?>"><i class="glyphicon glyphicon-plus"></i> Pemakaian Dummy</a></li>
-                    <li id="aktivasimeterbaru"><a href="<?= base_url('dummy/aktivasi'); ?>"><i class="glyphicon glyphicon-ok"></i> Aktivasi Dummy</a></li>
-                    <li id="meterdummykembali"><a href="<?= base_url('dummy/kembali'); ?>"><i class="glyphicon glyphicon-minus"></i> Dummy Kembali</a></li>
-                  </ul>
-                </li>
-
-
-
-
+                    
+                    <li id="dashboard" class="treeview">
+                      <a href="#">
+                        <i class="fa fa-list"></i> <span>Dummy</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li id="pemakaiandummy"><a href="<?= base_url('dummy/pakai'); ?>"><i class="glyphicon glyphicon-plus"></i> Pemakaian Dummy</a></li>
+                        <li id="aktivasimeterbaru"><a href="<?= base_url('dummy/aktivasi'); ?>"><i class="glyphicon glyphicon-ok"></i> Aktivasi Dummy</a></li>
+                        <li id="meterdummykembali"><a href="<?= base_url('dummy/kembali'); ?>"><i class="glyphicon glyphicon-minus"></i> Dummy Kembali</a></li>
+                      </ul>
+                    </li>
+                
         <?php if($this->session->userdata('is_admin') == 3
                 &&
                 $this->session->userdata('unit') == 18301
-            
             ): ?>
-                <li id="Entrigantimeter" class="treeview">
-                  <a href="#">
-                    <i class="glyphicon glyphicon-refresh"></i> <span>Ganti Meter</span>
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li id="pemakaiandummy"><a href="<?= base_url('#'); ?>"><i class="glyphicon glyphicon-arrow-down"></i>Input TO</a></li>
-                    <li id="aktivasimeterbaru"><a href="<?= base_url('#'); ?>"><i class="glyphicon glyphicon-folder-open"></i>Data Belum Selesai</a></li>
-                    <li id="meterdummykembali"><a href="<?= base_url('#'); ?>"><i class="glyphicon glyphicon-floppy-saved"></i>Input Data Selesai</a></li>
-                  </ul>
-                  </li>
+                    <li id="Entrigantimeter" class="treeview">
+                      <a href="#">
+                        <i class="glyphicon glyphicon-refresh"></i> <span>Ganti Meter</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li id="pemakaiandummy"><a href="<?= base_url('#'); ?>"><i class="glyphicon glyphicon-arrow-down"></i>Input TO</a></li>
+                        <li id="aktivasimeterbaru"><a href="<?= base_url('#'); ?>"><i class="glyphicon glyphicon-folder-open"></i>Data Belum Selesai</a></li>
+                        <li id="meterdummykembali"><a href="<?= base_url('#'); ?>"><i class="glyphicon glyphicon-floppy-saved"></i>Input Data Selesai</a></li>
+                      </ul>
+                    </li>
+                    
+                    <li id="Entrigantimeter" class="treeview">
+                      <a href="#">
+                        <i class="glyphicon glyphicon-refresh"></i> <span>Laporan</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li id="pemakaiandummy"><a href="<?= base_url('#'); ?>"><i class="glyphicon glyphicon-arrow-down"></i>Laporan Bulanan</a></li>
+                      </ul>
+                    </li>
+        <?php endif;?>
                   
+                <li class="header">Administrator</li>                
+        <?php if($this->session->userdata('is_admin') == 3
+                &&
+                $this->session->userdata('unit') == 18301            
+            ): ?>
                 <li class="treeview">
                 <a href="#">
                   <i class="glyphicon glyphicon-folder-close"></i> <span>Data Induk Langganan</span>
@@ -91,10 +105,8 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
                   <li id="meterdummykembali"><a href="<?= base_url('#'); ?>"><i class="glyphicon glyphicon-eye-open"></i>Lihat DIL</a></li>
                 </ul>
               </li>
-
         <?php endif;?>
 
-                <li class="header">Administrator</li>
                   <li class="treeview">
                     <a  href="<?php echo site_url('/admin/auth/logout'); ?>">
                         <i class="fa fa-power-off"></i>

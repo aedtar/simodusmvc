@@ -1,9 +1,9 @@
 <?php
 	class Aktivasi_model extends CI_Model{
 
-		public function entri_model($data,$data_stok,$no_dummy,$id){
+		public function entri_model($data,$data_stok,$no_dummy,$edit_pakai){
 			$this->db->insert('tbl_aktivasi', $data);
-                        $this->update_tbl_metdum_pakai($id);
+                        $this->update_tbl_metdum_pakai($id,$edit_pakai);
 			$this->load->model('dummy/stok_model', 'stok_model');
                         $this->stok_model->update_stok($data_stok,$no_dummy);
                         return true;
@@ -57,10 +57,14 @@
 			return $result = $query->row_array();
 		}
                 
-		public function update_tbl_metdum_pakai($id){
+		public function update_tbl_metdum_pakai($id,$edit_pakai){
                         $tes = 'aktif';
+                        $tes2= $edit_pakai['alasan_rusak'];
+                        $tes3 = $edit_pakai['saisa_pulsa'];
                         $data_stok = array(
                                 'aktivasi' => $tes,
+                                'alasan_rusak' => $tes2,
+                                'sisa_pulsa' => $tes3
                         );
                         $this->db->where('id_meter', $id);
 			$this->db->update('tbl_metdum_pakai', $data_stok);

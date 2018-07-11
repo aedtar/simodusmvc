@@ -68,12 +68,6 @@
                   </select>
                 </div>
               </div>
-              <div class="form-group">
-                <label for="ptgs_pasang" class="col-sm-2 control-label">Petugas Pasang</label>
-                <div class="col-sm-9">     
-                  <input type="text" name="ptgs_pasang" value="<?= $dummy['ptgs_pasang']; ?>" class="form-control" id="ptgs_pasang" placeholder="">
-                </div>
-              </div>
             
               <div class="form-group">
                 <label for="sisa_pulsa" class="col-sm-2 control-label">Sisa Pulsa</label>
@@ -81,22 +75,13 @@
                   <input type="text" name="sisa_pulsa"  value="<?= $dummy['sisa_pulsa'] ; ?>" class="form-control" id="sisa_pulsa" placeholder="">
                 </div>
               </div>
-            
               <div class="form-group">
-                <label for="no_hp_plg" class="col-sm-2 control-label">Mobile No</label>
+                <label for="ket_rusak" class="col-sm-2 control-label">Informasi Tambahan</label>
                 <div class="col-sm-9">
-                  <input type="text" name="no_hp_plg" value="<?= $dummy['no_hp_plg'] ; ?>" class="form-control" id="no_hp_plg" placeholder="">
+                  <input type="text" name="ket_rusak" value="<?= $dummy['ket_rusak'] ; ?>" disabled="disabled" class="form-control" id="ket_rusak" placeholder="">
                 </div>
-              </div>
+              </div>            
 
-              <div class="form-group">
-                <label for="nama_cc" class="col-sm-2 control-label">Nama Call Center</label>
-                <div class="col-sm-9">
-                  <input type="text" name="nama_cc" value="<?= $dummy['nama_cc'] ; ?>" class="form-control" id="nama_cc" placeholder="">
-                </div>
-              </div>
-            
-            
               <div class="form-group">
                 <div class="col-md-11">
                   <input type="submit" name="submit" value="Update Pemakaian Dummy" class="btn btn-info pull-right">

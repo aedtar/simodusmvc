@@ -3,12 +3,12 @@
     <div class="col-md-12">
       <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Tambah Data Pemakaian Dummy</h3>
+          <h3 class="box-title">Tambah Data Penggunaan Dummy</h3>
         </div>
         <!-- /.box-header -->
         <!-- form start -->
         <div class="box-body my-form-body">
-          <?php if(isset($msg) || validation_errors() !== ''): ?>
+            <?php if(isset($msg) || validation_errors() !== ''): ?>
               <div class="alert alert-warning alert-dismissible">
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                   <h4><i class="icon fa fa-warning"></i> Alert!</h4>
@@ -20,7 +20,6 @@
             <?php echo form_open(base_url('dummy/pakai/add'), 'class="form-horizontal"');  ?> 
               <div class="form-group">
                 <label for="no_dummy" class="col-sm-2 control-label">Nomor Dummy</label>
-
                 <div class="col-sm-9">
                   <select name="no_dummy" class="form-control">
                     <option disabled selected>-----</option>
@@ -47,7 +46,6 @@
 
               <div class="form-group">
                 <label for="alasan_rusak" class="col-sm-2 control-label">Alasan Rusak</label>
-
                 <div class="col-sm-9">
                   <select name="alasan_rusak" class="form-control">
                     <option disabled selected>-----</option>
@@ -86,8 +84,7 @@
                   <input type="text" name="ket_rusak" class="form-control" id="ket_rusak" 
                          placeholder="Jika ket rusak lain lain, isikan !">
                 </div>
-              </div>
-            
+              </div>            
 
               <div class="form-group">
                 <label for="nama_pel" class="col-sm-2 control-label">Nama Pelanggan</label>
@@ -97,24 +94,25 @@
               </div>            
 
               <div class="form-group">
-                <label for="no_hp_plg" class="col-sm-2 control-label">Mobile No</label>
+                <label for="no_hp_plg" class="col-sm-2 control-label">Nomor HP pelanggan</label>
                 <div class="col-sm-9">
                   <input type="number" name="no_hp_plg" class="form-control" id="no_hp_plg" placeholder="">
                 </div>
-              </div>
-            
+              </div>            
 
               <div class="form-group">
                 <label for="ptgs_pasang" class="col-sm-2 control-label">Petugas Pasang</label>
                 <div class="col-sm-9">
-                  <input type="text" name="ptgs_pasang" class="form-control" id="ptgs_pasang" placeholder="">
+                  <input type="text" name="ptgs_pasang" class="form-control" id="ptgs_pasang" 
+                         placeholder="petugas pasang meter dummy">
                 </div>
               </div>
             
               <div class="form-group">
                 <label for="nama_cc" class="col-sm-2 control-label">Nama Call Center</label>
                 <div class="col-sm-9">
-                  <input type="text" name="nama_cc" class="form-control" id="nama_cc" placeholder="">
+                  <input type="text" name="nama_cc" class="form-control" id="nama_cc" 
+                         placeholder="Silahkan isikan nama anda">
                 </div>
               </div>
             

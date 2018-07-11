@@ -20,12 +20,12 @@
                                 $this->form_validation->set_rules('no_dummy', 'Nomor Dummy', 'trim|required');
                                 $this->form_validation->set_rules('no_meter_rusak', 'Nomor Meter Rusak', 'trim|required');
                                 $this->form_validation->set_rules('alasan_rusak', 'Alasan Rusak', 'trim|required');
-                                $this->form_validation->set_rules('ptgs_pasang', 'Petugas Pasang', 'trim|required');
+                                $this->form_validation->set_rules('ptgs_pasang', 'Petugas Pasang Dummy', 'trim|required');
                                 $this->form_validation->set_rules('sisa_pulsa', 'Sisa Pulsa', 'trim|required');
                                 $this->form_validation->set_rules('no_hp_plg', 'No HP pelanggan', 'trim|required');
                                 $this->form_validation->set_rules('nama_cc', 'Nama Call Center', 'trim|required');
                                 $this->form_validation->set_rules('std_dummy', 'Stand Dummy', 'trim|required');
-                                $this->form_validation->set_rules('nama_pel', 'Stand Dummy', 'trim|required');
+                                $this->form_validation->set_rules('nama_pel', 'Nama Pelanggan', 'trim|required');
 
 				if ($this->form_validation->run() == FALSE) {
 					$data['view'] = 'dummy/pakai/pakai_add';
@@ -45,38 +45,36 @@
                                                 'no_dummy' => $this->input->post('no_dummy'),
                                                 'std_dummy' => $this->input->post('std_dummy'),
                                                 'nama_pel' => $this->input->post('nama_pel'),
+                                                'ket_rusak' => $this->input->post('ket_rusak'),
                                                 'aktivasi' => 'non aktif',
                                                 'kembali' => 'belum',
                                                 'nama' => $this->session->userdata('name'),
                                                 'unit' => $this->session->userdata('unit'),
                                                 'id_user' => $this->session->userdata('admin_id'),
 					);
-                                                                                    
-                                        $tgl_pakai = date("Y-m-d H:i:s");   
-					$data_stok = array(
-                                                'tgl_pakai' => $tgl_pakai,
-                                                'tgl_aktivasi' => NULL,
-                                                'tgl_kembali' => NULL,
-                                                'no_meter_rusak' => $this->input->post('no_meter_rusak'),
-                                                'posko' => $this->session->userdata('name'),  
-                                                'status'=> NULL,
-                                        );
-                                        
-                                        $no_dummy = $this->input->post('no_dummy');
 					$data = $this->security->xss_clean($data);
-					$result = $this->pakai_model->add_pakai($data,$data_stok,$no_dummy);
+                                                                                      
+					$result = $this->pakai_model->add_pakai($data);                      
 					if($result ){
 						$this->session->set_flashdata('msg', 'Record is Added Successfully!');
 						redirect(base_url('dummy/pakai'));
-					}
+					} else {
+                                        }
 				}
 			}
 			else{
                                 $data['view'] = 'dummy/pakai/pakai_add';
                                 $data['dummy']= $this->pakai_model->get_dummy();
                                 $this->load->view('admin/layout', $data);
-			}
-			
+			}			
+		}
+                
+		public function del($id = 0){
+			$result=$this->pakai_model->del($id);
+                        if($result){
+                                $this->session->set_flashdata('msg', 'Record is Updated Successfully!');
+                                redirect(base_url('dummy/pakai'));
+                        }
 		}
 
 		public function edit($id = 0){
@@ -121,11 +119,6 @@
 			}
 		}
 
-		public function del($id = 0){
-			$this->db->delete('tbl_metdum_pakai', array('id_meter' => $id));
-			$this->session->set_flashdata('msg', 'Record is Deleted Successfully!');
-			redirect(base_url('dummy/pakai'));
-		}
 
 	}
 

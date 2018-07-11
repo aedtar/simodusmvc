@@ -15,7 +15,7 @@
 <section class="content">
        <!--Small boxes (Stat box)--> 
       <div class="row">
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-2 col-xs-4">
            <!--small box--> 
           <div class="small-box bg-yellow">
             <div class="inner">
@@ -23,30 +23,75 @@
                     <?= $all_data; ?>
                 </h3>
 
-              <p>Jumlah Total Dummy</p>
+              <p>Total Dummy</p>
             </div>
             <div class="icon">
               <i class="ion ion-person-add"></i>
             </div>
-            <a href="<?= base_url('monitoring/dummy'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?= base_url('dummy/monitoring'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!--./col--> 
 
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-2 col-xs-4">
            <!--small box--> 
           <div class="small-box bg-aqua">
             <div class="inner">
               <h3>
                     <?= $all_data2; ?></h3>
 
-              <p>Dummy digunakan</p>
+              <p>Dummy yang sedang digunakan</p>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
             </div>
           </div>
         </div>
+
+<!--        <div class="col-lg-2 col-xs-4">
+           small box 
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <h3>
+              </h3>
+
+              <p>Dummy belum aktivasi</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-bag"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-xs-4">
+           small box 
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <h3>
+              </h3>
+
+              <p>Dummy belum kembali</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-bag"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-xs-4">
+           small box 
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <h3>
+              </h3>
+
+              <p>Dummy standby</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-bag"></i>
+            </div>
+          </div>
+        </div>-->
 
 <link rel="stylesheet" href="<?= base_url() ?>public/plugins/datatables/dataTables.bootstrap.css">  
 

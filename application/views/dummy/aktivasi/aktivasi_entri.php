@@ -71,9 +71,23 @@
             
             
               <div class="form-group">
+                <label for="ket_rusak" class="col-sm-2 control-label">Info Tambahan</label>
+                <div class="col-sm-9">     
+                  <input type="text" name="ket_rusak" value="<?= $dummy['ket_rusak']; ?>" class="form-control" readonly="readonly" id="ket_rusak" placeholder="">
+                </div>
+              </div>
+            
+              <div class="form-group">
                 <label for="sisa_pulsa" class="col-sm-2 control-label">Sisa Pulsa</label>
+                <div class="col-sm-9">     
+                  <input type="text" name="sisa_pulsa" value="<?= $dummy['sisa_pulsa']; ?>" class="form-control"  id="sisa_pulsa" placeholder="">
+                </div>
+              </div>
+            
+              <div class="form-group">
+                <label for="ptgs_pasang" class="col-sm-2 control-label">Petugas Pasang</label>
                 <div class="col-sm-9">
-                  <input type="text" name="sisa_pulsa"  value="<?= $dummy['sisa_pulsa'] ; ?>" class="form-control" id="sisa_pulsa" placeholder="">
+                  <input type="text" name="ptgs_pasang"  value="<?= $dummy['ptgs_pasang'] ; ?>" class="form-control" readonly="" id="ptgs_pasang" placeholder="">
                 </div>
               </div>
             
