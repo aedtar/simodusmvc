@@ -82,6 +82,7 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
                         </span>
                       </a>
                       <ul class="treeview-menu">
+                        <li id="pemakaiandummy"><a href="<?= base_url('dummy/tagsus'); ?>"><i class="glyphicon glyphicon-arrow-down"></i>Tagihan Susulan</a></li>
                         <li id="pemakaiandummy"><a href="<?= base_url('#'); ?>"><i class="glyphicon glyphicon-arrow-down"></i>Laporan Bulanan</a></li>
                       </ul>
                     </li>

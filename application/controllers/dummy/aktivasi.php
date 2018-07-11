@@ -46,21 +46,17 @@
                                                 'id_user' => $this->session->userdata('admin_id'),
                                                 'unit' => $this->session->userdata('unit'),
 					);
+					$data = $this->security->xss_clean($data);                                        
                                         
-                                        $edit_pakai = array(
+                                        $aktif='aktif';
+					$data_lama = array(
+                                                'aktivasi' => $aktif,
                                                 'alasan_rusak' => $this->input->post('alasan_rusak'),
-                                                'sisa_pulsa' => $this->input->post('sisa_pulsa'),
-                                            
+                                                'sisa_pulsa' => $this->input->post('sisa_pulsa'),  
                                         );
+					$data_lama = $this->security->xss_clean($data_lama);
                                         
-                                        $no_dummy = $this->input->post('no_dummy');  
-					$data_stok = array(
-                                                'tgl_aktivasi' => $tgl_aktivasi,
-                                                'no_meter_rusak' => $this->input->post('no_meter_baru'),
-                                        );
-                                        
-					$data = $this->security->xss_clean($data);
-					$result = $this->aktivasi_model->entri_model($data,$data_stok,$no_dummy,$id,$edit_pakai);
+					$result = $this->aktivasi_model->entri_model($data,$data_lama);
 					if($result){
 						$this->session->set_flashdata('msg', 'Record is Updated Successfully!');
 						redirect(base_url('dummy/aktivasi'));

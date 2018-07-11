@@ -4,7 +4,7 @@
  <section class="content">
    <div class="box">
     <div class="box-header">
-      <h3 class="box-title">Monitoring Dummy <?= ucwords($this->session->userdata('unit')); ?></h3>
+      <h3 class="box-title">Dummy Belum Kembali ke Rayon <?= ucwords($this->session->userdata('unit')); ?></h3>
     </div>
        
     <!-- /.box-header -->
@@ -12,27 +12,29 @@
       <table id="example1" class="table table-bordered table-striped ">
         <thead>
         <tr>
+          <th>Posko</th>
           <th>Tanggal Rusak</th>
+          <th>Tanggal AKtivasi</th>
           <th>Nomor Dummy</th>
           <th>Nomor Meter Rusak</th>
           <th>Nomor Meter Baru</th>
           <th>Nama Pelanggan</th>
           <th>Nomor HP Pelanggan</th>
           <th>Petugas Pasang Dummy</th>
-          <th>Tanggal AKtivasi</th>
         </tr>
         </thead>
         <tbody>
           <?php foreach($all_data as $row): ?>
           <tr>
+            <td><?= $row['nama']; ?></td>
             <td><?= $row['tgl_pakai']; ?></td>
+            <td><?= $row['tgl_aktivasi']; ?></td>
             <td><?= $row['no_dummy']; ?></td>
             <td><?= $row['no_meter_rusak']; ?></td>
             <td><?= $row['no_meter_baru']; ?></td>
             <td><?= $row['nama_pel']; ?></td>
             <td><?= $row['no_hp_plg']; ?></td>
             <td><?= $row['ptgs_pasang']; ?></td>
-            <td><?= $row['tgl_aktivasi']; ?></td>
             
           </tr>
           <?php endforeach; ?>

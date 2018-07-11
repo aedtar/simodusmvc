@@ -1,36 +1,39 @@
 <?php
 	class Pakai_model extends CI_Model{
 
-		public function get_all_users(){
-//                    untuk menghitung waktu operasi model ini
+            //untuk mendapatkan data dummy yang baru digunakan
+		public function get_all_users(){                    
                         $this->benchmark->mark('code_start');
-                        $this->db->select(
-                                'id_meter,no_dummy,no_meter_rusak,alasan_rusak,tgl_pakai,'
-                                . 'std_dummy,sisa_pulsa,nama_cc,'
-                                . 'aktivasi'
-                                );
-                        $this->db->order_by('id_meter','desc');
-                        $this->db->limit(150);
-                        $this->db->where('unit', $this->session->userdata('unit'));
-                        $query = $this->db->get('tbl_metdum_pakai');
-                        return $result = $query->result_array();
+                        return $this->db->select(
+                                            'id_meter,no_dummy,no_meter_rusak,alasan_rusak,tgl_pakai,'
+                                            . 'std_dummy,sisa_pulsa,nama_cc,'
+                                            . 'aktivasi')
+                                        ->order_by('id_meter','desc')
+                                        ->limit(150)
+                                        ->where('unit', $this->session->userdata('unit'))
+                                        ->get('tbl_metdum_pakai')
+                                        ->result_array();
+                        
                         $this->benchmark->mark('code_end');                    
 		}
                 
+                
+            //simpan data pemakaian dummy
 		public function add_pakai($data){
-			$this->db->insert('tbl_metdum_pakai', $data);
+			$this->db->insert('tbl_metdum_pakai', $data);   
                         
                         $lastid= $this->db->insert_id();
+                        
                         $tgl_pakai = date("Y-m-d H:i:s");
                         $no_dummy=$data['no_dummy'];
                         $no_meter_rusak=$data['no_meter_rusak'];
+                        $status = 'terpakai';
                         $data_last=array(
                             'id_dummy' => $lastid,
                             'tgl_pakai' =>$tgl_pakai,
                             'tgl_aktivasi' => NULL,
                             'tgl_kembali' => NULL,
-                            'no_dummy' => $no_dummy,
-                            'status' => NULL,
+                            'status' => $status,
                             'no_meter_rusak' => $no_meter_rusak,
                             'posko' => $this->session->userdata('name')
                         );
@@ -39,7 +42,10 @@
 			$this->db->update('tbl_metdum_stok', $data_last);
                         return true;
 		}
-
+                
+                
+                
+                //hapus data pemakaian dummy
 		public function del($id){
 			$this->db->delete('tbl_metdum_pakai', array('id_meter' => $id));
                         $ready='ready';
@@ -56,32 +62,24 @@
                         return true;
 		}
 
-
+                //dapat nomor dummy yang masih standby
 		public function get_dummy(){
                         $tes='ready';
                         $this->db->order_by('no_dummy','asc');
                         $this->db->where('unit', $this->session->userdata('unit'));
                         $this->db->where('status', $tes);
                         $query = $this->db->get('tbl_metdum_stok');
-                        
 			return $result = $query->result_array();
 		}
                                 
                 
-                
+                //dapat data dummy yang sudah dipakai untuk diedit
 		public function get_dummy_by_id($id){
 			$query = $this->db->get_where('tbl_metdum_pakai', array('id_meter' => $id));
 			return $result = $query->row_array();
 		}
                 
-//		public function update_stok($data_stok,$no_dummy){
-//                        $this->db->where('no_dummy', $no_dummy);
-//                        $this->db->where('unit', $this->session->userdata('unit'));
-//			$this->db->update('tbl_metdum_stok', $data_stok);
-//			return true;
-//                        
-//		}
-
+                //mengupdate database setelah diedit
 		public function edit_dummy($data, $id){
 			$this->db->where('id_meter', $id);
 			$this->db->update('tbl_metdum_pakai', $data);

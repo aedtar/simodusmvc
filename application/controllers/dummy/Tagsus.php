@@ -1,19 +1,18 @@
 <?php
 	defined('BASEPATH') OR exit('No direct script access allowed');
 
-	class Dummy extends MY_Controller {
+	class Tagsus extends MY_Controller {
 
 		public function __construct(){
 			parent::__construct();
-			$this->load->model('monitoring/dummy_model', 'dummy_model');
+//			$this->load->model('dummy/aktivasi_model', 'aktivasi_model');
 		}
 
 		public function index(){
-			$data['all_data'] =  $this->dummy_model->get_all_data();
-			$data['view'] = 'monitoring/mon_dummy';
+//			$data['all_users'] =  $this->aktivasi_model->get_all_users();
+			$data['view'] = 'dummy/tagsus/tagsus_list';
 			$this->load->view('admin/layout', $data);
 		}
-		
 		
 	}
 

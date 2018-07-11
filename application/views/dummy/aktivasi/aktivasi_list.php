@@ -4,38 +4,40 @@
  <section class="content">
    <div class="box">
     <div class="box-header">
-      <h3 class="box-title">List Untuk Aktivasi Dummy <?= ucwords($this->session->userdata('unit')); ?></h3>
+      <h3 class="box-title">Data untuk diganti meter (Aktivasi)</h3>
     </div>
-       <a href="<?= base_url('dummy/aktivasi/histori'); ?>" class="btn btn-info btn-flat
-                    <?=(
-                            $this->session->userdata('is_admin') == 4 
-                            ||
-                            $this->session->userdata('is_admin') == 3                           
-                        )?'':'disabled'
-                    ?>
-                   ">Histori Aktivasi
-       </a>
+    <?php if($this->session->userdata('is_admin') == 4
+            ||
+            $this->session->userdata('is_admin') == 3  ): ?>
+       <a href="<?= base_url('dummy/aktivasi/histori'); ?>" class="btn btn-info btn-flat">Histori Aktivasi</a>
+    <?php endif;?>
+       
     <!-- /.box-header -->
     <div class="box-body table-responsive">
       <table id="example1" class="table table-bordered table-striped ">
         <thead>
         <tr>
+          <th>Posko</th>
           <th>Tanggal Pemakaian</th>
           <th>Nomor Dummy</th>
           <th>Nomor Meter Rusak</th>
           <th>Alasan Rusak</th>
           <th>Stand Dummy</th>
           <th>Sisa Pulsa</th>
-          <th>Call Center</th>
-          <th style="width: 130px;" class="text-right">Tindakan</th>
+          <th>Call Center</th>                     
+        <?php if($this->session->userdata('is_admin') == 4): ?>
+            <th style="width: 150px;" class="text-right">Tindakan</th>   
+        <?php endif;?>
         </tr>
         </thead>
         <tbody>
           <?php foreach($all_users as $row): ?>
           <tr>
+            <td><?= $row['nama']; ?></td>
             <td><?= $row['tgl_pakai']; ?></td>
             <td><?= $row['no_dummy']; ?></td>
             <td><?= $row['no_meter_rusak']; ?></td>
+            
             <td>
                 <span class="">
                     
@@ -96,7 +98,7 @@
                         echo "kWh bertambah";
                         break;
                     case 18:
-                        echo "Lain-lain";
+                        $row['ket_rusak'];
                         break;
                     }
                     ?>
@@ -106,15 +108,13 @@
             <td><?= $row['std_dummy']; ?></td>
             <td><?= $row['sisa_pulsa']; ?></td>
             <td><?= $row['nama_cc']; ?></td>
+            <?php if($this->session->userdata('is_admin') == 4): ?>
             <td class="text-right">
-                <a href="<?= base_url('dummy/aktivasi/entri/'.$row['id_meter']); ?>" class="btn btn-warning btn-flat
-                    <?=(
-                            $this->session->userdata('is_admin') == 4                        
-                        )?'':'disabled'
-                    ?>
-                   ">Aktivasi
-                </a>
+                <a href="<?= base_url('dummy/aktivasi/entri/'.$row['id_meter']); ?>" 
+                   class="btn btn-warning btn-flat">Aktivasi</a> 
             </td>
+            <?php endif;?>            
+            
             
           </tr>
           <?php endforeach; ?>
