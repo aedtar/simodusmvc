@@ -4,15 +4,15 @@
             //untuk mendapatkan data dummy yang baru digunakan
 		public function get_all_users(){                    
                         $this->benchmark->mark('code_start');
-                        return $this->db->select(
-                                            'id_meter,no_dummy,no_meter_rusak,alasan_rusak,tgl_pakai,'
-                                            . 'std_dummy,sisa_pulsa,nama_cc,'
-                                            . 'aktivasi')
-                                        ->order_by('id_meter','desc')
-                                        ->limit(150)
-                                        ->where('unit', $this->session->userdata('unit'))
-                                        ->get('tbl_metdum_pakai')
-                                        ->result_array();
+                        return $this->db    ->select(
+                                                'id_meter,no_dummy,no_meter_rusak,alasan_rusak,tgl_pakai,'
+                                                . 'std_dummy,sisa_pulsa,nama_cc,'
+                                                . 'aktivasi')
+                                            ->order_by('id_meter','desc')
+                                            ->limit(150)
+                                            ->where('unit', $this->session->userdata('unit'))
+                                            ->get('tbl_metdum_pakai')
+                                            ->result_array();
                         
                         $this->benchmark->mark('code_end');                    
 		}
@@ -46,19 +46,32 @@
                 
                 
                 //hapus data pemakaian dummy
-		public function del($id){
-			$this->db->delete('tbl_metdum_pakai', array('id_meter' => $id));
-                        $ready='ready';
+		public function del($id,$no_dummy){
+                    
+//			$query = $this->db->get_where('tbl_metdum_pakai', array('id_meter' => $id));
+//			$no_dummy = $query['no_dummy'];
+//                        
+//                        $query   =  $this->db       ->select('no_dummy,id_meter')
+//                                                    ->limit(1)
+//                                                    ->where('unit', $this->session->userdata('unit'))
+//                                                    ->where('id_meter', $id)
+//                                                    ->get('tbl_metdum_pakai');
+//                        $no_dummy   =  $query->row_array();
+                        
+                        $ready="ready";
                         $data_last=array(
-                            'id_dummy' => NULL,
                             'tgl_pakai' => NULL,
                             'tgl_aktivasi' => NULL,
                             'tgl_kembali' => NULL,
                             'status' => $ready,
+                            'posko' => NULL,
                             'no_meter_rusak' => NULL
                         );
-                        $this->db->where('id_dummy', $id);
-			$this->db->update('tbl_metdum_stok', $data_last);
+			$this->db->where('no_dummy', $no_dummy)
+                                 ->where('unit', $this->session->userdata('unit'))
+                                 ->update('tbl_metdum_stok', $data_last);
+//                                    
+			$this->db->delete('tbl_metdum_pakai', array('id_meter' => $id));
                         return true;
 		}
 

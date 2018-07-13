@@ -106,7 +106,7 @@
             <td class="text-right">
                 <a href="<?= base_url('dummy/pakai/edit/'.$row['id_meter']); ?>" class="btn btn-warning btn-flat">Edit</a> 
                 <?php if($row['aktivasi']=='non aktif'):?>
-                <a href="<?= base_url('dummy/pakai/del/'.$row['id_meter']); ?>" class="btn btn-danger btn-flat">Delete</a>
+                <a href="<?= base_url('dummy/pakai/del/'.$row['no_dummy']); ?>" class="btn btn-danger btn-flat">Delete</a>
                 <?php endif;?>
             </td>
             <?php endif;?>            
