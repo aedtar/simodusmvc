@@ -37,13 +37,6 @@
                   <input type="number" name="std_dummy" class="form-control" id="std_dummy" placeholder="">
                 </div>
               </div>
-            
-              <div class="form-group">
-                <label for="no_meter_rusak" class="col-sm-2 control-label">Nomor Meter Rusak</label>
-                <div class="col-sm-9">
-                  <input type="number" name="no_meter_rusak" class="form-control" id="no_meter_rusak" placeholder="">
-                </div>
-              </div>
 
               <div class="form-group">
                 <label for="alasan_rusak" class="col-sm-2 control-label">Alasan Rusak</label>
@@ -74,35 +67,11 @@
               </div>
 
               <div class="form-group">
-                <label for="sisa_pulsa" class="col-sm-2 control-label">Sisa Pulsa</label>
+                <label for="no_meter_rusak" class="col-sm-2 control-label">Nomor Meter Rusak</label>
                 <div class="col-sm-9">
-                  <input type="number" name="sisa_pulsa" class="form-control" id="sisa_pulsa" placeholder="">
+                  <input type="number" name="no_meter_rusak" class="form-control" id="no_meter_rusak" placeholder="">
                 </div>
               </div>
-
-              <div class="form-group">
-                <label for="ket_rusak" class="col-sm-2 control-label">Informasi Tambahan</label>
-                <div class="col-sm-9">
-                  <input type="text" name="ket_rusak" class="form-control" id="ket_rusak" 
-                         placeholder="Jika ket rusak lain lain, isikan !">
-                </div>
-              </div>
-            
-
-              <div class="form-group">
-                <label for="nama_pel" class="col-sm-2 control-label">Nama Pelanggan</label>
-                <div class="col-sm-9">
-                  <input type="text" name="nama_pel" class="form-control" id="nama_pel" placeholder="">
-                </div>
-              </div>            
-
-              <div class="form-group">
-                <label for="no_hp_plg" class="col-sm-2 control-label">Mobile No</label>
-                <div class="col-sm-9">
-                  <input type="number" name="no_hp_plg" class="form-control" id="no_hp_plg" placeholder="">
-                </div>
-              </div>
-            
 
               <div class="form-group">
                 <label for="ptgs_pasang" class="col-sm-2 control-label">Petugas Pasang</label>
@@ -111,6 +80,20 @@
                 </div>
               </div>
             
+              <div class="form-group">
+                <label for="sisa_pulsa" class="col-sm-2 control-label">Sisa Pulsa</label>
+                <div class="col-sm-9">
+                  <input type="number" name="sisa_pulsa" class="form-control" id="sisa_pulsa" placeholder="">
+                </div>
+              </div>
+            
+              <div class="form-group">
+                <label for="no_hp_plg" class="col-sm-2 control-label">Mobile No</label>
+                <div class="col-sm-9">
+                  <input type="number" name="no_hp_plg" class="form-control" id="no_hp_plg" placeholder="">
+                </div>
+              </div>
+
               <div class="form-group">
                 <label for="nama_cc" class="col-sm-2 control-label">Nama Call Center</label>
                 <div class="col-sm-9">

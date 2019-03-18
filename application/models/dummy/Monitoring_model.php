@@ -28,8 +28,8 @@
                                 $this->db->where('tbl_metdum_pakai.aktivasi',$aktif);
                                 $this->db->where('tbl_metdum_pakai.kembali',$belum);
                                 
-                                $this->db->from('tbl_aktivasi');
-                                $this->db->join('tbl_metdum_pakai','tbl_metdum_pakai.id_meter=tbl_aktivasi.id_meter');
+                                $this->db->from('tbl_metdum_pakai');
+                                $this->db->join('tbl_aktivasi','tbl_metdum_pakai.id_meter=tbl_aktivasi.id_meter');
                                 
                                 $query = $this->db->get();
                                 return $result = $query->result_array();
